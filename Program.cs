@@ -12,15 +12,20 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 {
     options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
 });
-
+const string CONNECTION_STRING = "Host=127.0.0.1;Database=sbtest;Username=sbtest;Password=password";
+builder.Services.AddSingleton<NpgsqlDataSource>(_ =>
+{
+    var dataSourceBuilder = new NpgsqlDataSourceBuilder(CONNECTION_STRING);
+    return dataSourceBuilder.Build();
+});
 
 var app = builder.Build();
 
-const string CONNECTION_STRING = "Host=127.0.0.1;Database=sbtest;Username=sbtest;Password=password";
 
-app.MapPost("/postgres/cache", async ([FromBody] CacheItem cacheItem) =>
+
+app.MapPost("/postgres/cache", async ([FromBody] CacheItem cacheItem, NpgsqlDataSource dataSource) =>
 {
-    using var connection = new NpgsqlConnection(CONNECTION_STRING);
+    using var connection = await dataSource.OpenConnectionAsync();
 
     await connection.ExecuteAsync(
         """
@@ -34,9 +39,9 @@ app.MapPost("/postgres/cache", async ([FromBody] CacheItem cacheItem) =>
     return Results.Ok();
 });
 
-app.MapGet("/postgres/cache/{key}", async (string key) =>
+app.MapGet("/postgres/cache/{key}", async (string key, NpgsqlDataSource dataSource) =>
 {
-    using var connection = new NpgsqlConnection(CONNECTION_STRING);
+    using var connection = await dataSource.OpenConnectionAsync();
 
     var value = await connection.QuerySingleOrDefaultAsync<string>(
         "SELECT value FROM cache WHERE key = @Key",
@@ -45,6 +50,13 @@ app.MapGet("/postgres/cache/{key}", async (string key) =>
     return value is not null ?
         Results.Ok(JsonDocument.Parse(value).RootElement) :
         Results.NotFound();
+});
+
+app.MapDelete("/postgres/cache", async (NpgsqlDataSource dataSource) =>
+{
+    using var connection = await dataSource.OpenConnectionAsync();
+    await connection.ExecuteAsync("DELETE FROM cache");
+    return Results.Ok();
 });
 
 app.Run();

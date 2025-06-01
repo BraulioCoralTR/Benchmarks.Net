@@ -5,15 +5,12 @@ import { check, sleep } from "k6";
 const BASE_URL = "http://localhost:5161"; // Adjust if your app runs on a different port/host
 
 export const options = {
-  vus: 50,
-  iterations: 20000, // 50 VUs * 20,000 iterations = 1,000,000 total requests per endpoint
+  vus: 80,
+  iterations: 100000,
   thresholds: {
     "http_req_duration{endpoint:postgres_insert}": ["p(95)<300"], // 95% of requests should be below 500ms
     "http_req_failed{endpoint:postgres_insert}": ["rate<0.01"], // Error rate should be less than 1%
     "checks{endpoint:postgres_insert}": ["rate>0.99"], // Check success rate should be higher than 99%
-    "http_req_duration{endpoint:redis_insert}": ["p(95)<200"], // 95% of requests should be below 100ms
-    "http_req_failed{endpoint:redis_insert}": ["rate<0.01"], // Error rate should be less than 1%
-    "checks{endpoint:redis_insert}": ["rate>0.99"], // Check success rate should be higher than 99%
   },
 };
 
@@ -48,4 +45,14 @@ export default function () {
 
   // Optional: Add a small sleep if needed, e.g., sleep(0.1);
 
+}
+
+
+// --- Teardown Function --- Runs once after the test (optional)
+export function teardown() {
+  console.log(
+    `INFO: Insert test finished.`
+  );
+  // http.del(`${BASE_URL}/postgres/cache`);
+  // console.log('INFO: Teardown cleanup finished.');
 }

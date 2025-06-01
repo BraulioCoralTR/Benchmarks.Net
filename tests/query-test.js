@@ -3,7 +3,7 @@ import { check } from "k6";
 // import { randomItem } from 'k6/experimental/collections'; // Removed import
 
 // Base URL of your application
-const BASE_URL = "http://localhost:5000"; // Adjust if your app runs on a different port/host
+const BASE_URL = "http://localhost:5161"; // Adjust if your app runs on a different port/host
 
 const NUM_SETUP_KEYS = 100; // Number of keys to pre-populate for querying
 
@@ -33,17 +33,6 @@ export function setup() {
       continue; // Skip adding this key if insert failed
     }
 
-    // Insert into Redis
-    const redisRes = http.post(`${BASE_URL}/redis/cache`, payload, setupParams);
-    if (redisRes.status !== 200) {
-      console.error(
-        `ERROR: Setup failed for Redis key ${key}. Status: ${redisRes.status}, Body: ${redisRes.body}`
-      );
-      // Optionally fail the test if setup is critical
-      // fail(`Setup failed for Redis key ${key}`);
-      continue; // Skip adding this key if insert failed
-    }
-
     keys.push(key); // Add key to the list only if both inserts succeeded
     if ((i + 1) % 10 === 0) {
       console.log(
@@ -69,15 +58,12 @@ export function setup() {
 
 // --- Configuration for the main test stage ---
 export const options = {
-  vus: 50,
-  iterations: 20000, // 50 VUs * 2,000 iterations = 100,000 total queries
+  vus: 80,
+  iterations: 100000,
   thresholds: {
     "http_req_duration{endpoint:postgres_get}": ["p(95)<300"],
     "http_req_failed{endpoint:postgres_get}": ["rate<0.01"],
     "checks{endpoint:postgres_get}": ["rate>0.99"],
-    "http_req_duration{endpoint:redis_get}": ["p(95)<200"],
-    "http_req_failed{endpoint:redis_get}": ["rate<0.01"],
-    "checks{endpoint:redis_get}": ["rate>0.99"],
   },
   // If setup fails, don't run the main iterations
   setupTimeout: "120s", // Allow more time for setup if needed
@@ -117,28 +103,6 @@ export default function (data) {
     },
     { endpoint: "postgres_get" }
   );
-
-  // --- Test Redis Get ---
-  const redisRes = http.get(`${BASE_URL}/redis/cache/${key}`, {
-    ...params,
-    tags: { endpoint: "redis_get" },
-  });
-  check(
-    redisRes,
-    {
-      "Redis: get status is 200": (r) => r.status === 200,
-      "Redis: get response is valid JSON": (r) => {
-        try {
-          const jsonData = r.json(); // Check if the response body is valid JSON
-          return jsonData !== null && typeof jsonData === "object"; // Basic validation
-        } catch (e) {
-          console.error(`Redis invalid JSON for key ${key}: ${r.body}`);
-          return false;
-        }
-      },
-    },
-    { endpoint: "redis_get" }
-  );
 }
 
 // --- Teardown Function --- Runs once after the test (optional)
@@ -146,11 +110,6 @@ export function teardown(data) {
   console.log(
     `INFO: Query test finished. Tested with ${data.keys.length} keys.`
   );
-  // Optional: Clean up keys inserted during setup
-  // console.log('INFO: Starting teardown cleanup...');
-  // for (const key of data.keys) {
-  //   http.del(`${BASE_URL}/postgres/cache/${key}`); // Assuming you add a DELETE endpoint
-  //   http.del(`${BASE_URL}/redis/cache/${key}`);
-  // }
-  // console.log('INFO: Teardown cleanup finished.');
+  http.del(`${BASE_URL}/postgres/cache`);
+  console.log('INFO: Teardown cleanup finished.');
 }
