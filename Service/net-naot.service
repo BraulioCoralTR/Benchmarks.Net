@@ -1,0 +1,19 @@
+﻿# /etc/systemd/system/net-naot.service
+[Unit]
+Description=Benchmarks .NET Non-AOT Service
+After=network.target
+
+[Service]
+Type=exec
+User=root
+Group=root
+WorkingDirectory=/opt/net/naot
+ExecStart=dotnet /opt/net/naot/Benchmarks.Net.dll
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=benchmarks-naot
+Environment=ASPNETCORE_URLS=http://localhost:8081
+
+[Install]
+WantedBy=multi-user.target

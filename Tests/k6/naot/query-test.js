@@ -3,7 +3,7 @@ import { check } from "k6";
 // import { randomItem } from 'k6/experimental/collections'; // Removed import
 
 // Base URL of your application
-const BASE_URL = "http://localhost:5161"; // Adjust if your app runs on a different port/host
+const BASE_URL = "http://localhost:8081"; // Adjust if your app runs on a different port/host
 
 const NUM_SETUP_KEYS = 100; // Number of keys to pre-populate for querying
 

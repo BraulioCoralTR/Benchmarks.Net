@@ -2,7 +2,7 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 // Base URL of your application
-const BASE_URL = "http://localhost:5161"; // Adjust if your app runs on a different port/host
+const BASE_URL = "http://localhost:8080"; // Adjust if your app runs on a different port/host
 
 export const options = {
   vus: 80,

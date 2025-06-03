@@ -1,0 +1,19 @@
+﻿# /etc/systemd/system/net-aot.service
+[Unit]
+Description=Benchmarks .NET AOT Service
+After=network.target
+
+[Service]
+Type=exec
+User=root
+Group=root
+WorkingDirectory=/opt/net/aot
+ExecStart=/opt/net/aot/Benchmarks.Net.AOT
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=net-aot
+Environment=ASPNETCORE_URLS=http://localhost:8080
+
+[Install]
+WantedBy=multi-user.target
