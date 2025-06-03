@@ -1,0 +1,626 @@
+=====================================================================
+SYSBENCH COMPREHENSIVE BENCHMARK RESULTS
+=====================================================================
+Start Time: Tue Jun  3 21:17:20 UTC 2025
+Hostname: ip-172-28-34-204.8067.aws-int.thomsonreuters.com
+Instance Type: c6g.large
+Operating System: Linux ip-172-28-34-204.8067.aws-int.thomsonreuters.com 6.1.131-143.221.amzn2023.aarch64 #1 SMP Mon Mar 24 15:34:49 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+CPU Info: Neoverse-N1 AWS Graviton2
+CPU Cores: 2
+Memory: 3.7Gi
+=====================================================================
+
+[2025-06-03 21:17:20] Starting Sysbench Comprehensive Benchmark Suite
+[2025-06-03 21:17:20] Results will be saved to: sysbench_results_c6g.large_20250603_211720.txt
+[2025-06-03 21:17:20] ================================================
+[2025-06-03 21:17:20] Checking prerequisites...
+[WARNING] k6 is not installed. K6 tests will be skipped.
+[SUCCESS] Prerequisites check passed
+[2025-06-03 21:17:20] Setting up PostgreSQL database and user...
+[SUCCESS] PostgreSQL setup completed
+[2025-06-03 21:17:21] Starting CPU benchmarks...
+[2025-06-03 21:17:21] Detected 2 CPU cores
+
+=====================================================================
+SINGLE-CORE CPU BENCHMARK (10 minutes)
+=====================================================================
+
+[2025-06-03 21:17:21] Running single-core CPU benchmark (10 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Prime numbers limit: 2000
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 1 eps: 26144.51 lat (ms,95%): 0.04
+[ 20s ] thds: 1 eps: 26202.62 lat (ms,95%): 0.04
+[ 30s ] thds: 1 eps: 26206.70 lat (ms,95%): 0.04
+[ 40s ] thds: 1 eps: 26192.00 lat (ms,95%): 0.04
+[ 50s ] thds: 1 eps: 26183.90 lat (ms,95%): 0.04
+[ 60s ] thds: 1 eps: 26191.51 lat (ms,95%): 0.04
+[ 70s ] thds: 1 eps: 26209.09 lat (ms,95%): 0.04
+[ 80s ] thds: 1 eps: 26201.31 lat (ms,95%): 0.04
+[ 90s ] thds: 1 eps: 26204.89 lat (ms,95%): 0.04
+[ 100s ] thds: 1 eps: 26176.60 lat (ms,95%): 0.04
+[ 110s ] thds: 1 eps: 26139.79 lat (ms,95%): 0.04
+[ 120s ] thds: 1 eps: 26140.40 lat (ms,95%): 0.04
+[ 130s ] thds: 1 eps: 26138.83 lat (ms,95%): 0.04
+[ 140s ] thds: 1 eps: 26169.28 lat (ms,95%): 0.04
+[ 150s ] thds: 1 eps: 26166.40 lat (ms,95%): 0.04
+[ 160s ] thds: 1 eps: 26169.71 lat (ms,95%): 0.04
+[ 170s ] thds: 1 eps: 26146.99 lat (ms,95%): 0.04
+[ 180s ] thds: 1 eps: 26148.90 lat (ms,95%): 0.04
+[ 190s ] thds: 1 eps: 26121.39 lat (ms,95%): 0.04
+[ 200s ] thds: 1 eps: 26085.92 lat (ms,95%): 0.04
+[ 210s ] thds: 1 eps: 26153.30 lat (ms,95%): 0.04
+[ 220s ] thds: 1 eps: 26140.30 lat (ms,95%): 0.04
+[ 230s ] thds: 1 eps: 26121.40 lat (ms,95%): 0.04
+[ 240s ] thds: 1 eps: 26017.50 lat (ms,95%): 0.04
+[ 250s ] thds: 1 eps: 26050.50 lat (ms,95%): 0.04
+[ 260s ] thds: 1 eps: 26049.10 lat (ms,95%): 0.04
+[ 270s ] thds: 1 eps: 26045.29 lat (ms,95%): 0.04
+[ 280s ] thds: 1 eps: 26051.70 lat (ms,95%): 0.04
+[ 290s ] thds: 1 eps: 26117.80 lat (ms,95%): 0.04
+[ 300s ] thds: 1 eps: 26162.51 lat (ms,95%): 0.04
+[ 310s ] thds: 1 eps: 26163.29 lat (ms,95%): 0.04
+[ 320s ] thds: 1 eps: 26162.81 lat (ms,95%): 0.04
+[ 330s ] thds: 1 eps: 26160.80 lat (ms,95%): 0.04
+[ 340s ] thds: 1 eps: 26155.48 lat (ms,95%): 0.04
+[ 350s ] thds: 1 eps: 26156.34 lat (ms,95%): 0.04
+[ 360s ] thds: 1 eps: 26188.69 lat (ms,95%): 0.04
+[ 370s ] thds: 1 eps: 26205.50 lat (ms,95%): 0.04
+[ 380s ] thds: 1 eps: 26214.50 lat (ms,95%): 0.04
+[ 390s ] thds: 1 eps: 26206.20 lat (ms,95%): 0.04
+[ 400s ] thds: 1 eps: 26202.99 lat (ms,95%): 0.04
+[ 410s ] thds: 1 eps: 26201.70 lat (ms,95%): 0.04
+[ 420s ] thds: 1 eps: 26198.01 lat (ms,95%): 0.04
+[ 430s ] thds: 1 eps: 26204.49 lat (ms,95%): 0.04
+[ 440s ] thds: 1 eps: 26206.21 lat (ms,95%): 0.04
+[ 450s ] thds: 1 eps: 26205.99 lat (ms,95%): 0.04
+[ 460s ] thds: 1 eps: 26204.71 lat (ms,95%): 0.04
+[ 470s ] thds: 1 eps: 26197.78 lat (ms,95%): 0.04
+[ 480s ] thds: 1 eps: 26162.82 lat (ms,95%): 0.04
+[ 490s ] thds: 1 eps: 26148.29 lat (ms,95%): 0.04
+[ 500s ] thds: 1 eps: 26153.10 lat (ms,95%): 0.04
+[ 510s ] thds: 1 eps: 26162.51 lat (ms,95%): 0.04
+[ 520s ] thds: 1 eps: 26158.09 lat (ms,95%): 0.04
+[ 530s ] thds: 1 eps: 26160.10 lat (ms,95%): 0.04
+[ 540s ] thds: 1 eps: 26133.56 lat (ms,95%): 0.04
+[ 550s ] thds: 1 eps: 26106.24 lat (ms,95%): 0.04
+[ 560s ] thds: 1 eps: 26118.81 lat (ms,95%): 0.04
+[ 570s ] thds: 1 eps: 26127.70 lat (ms,95%): 0.04
+[ 580s ] thds: 1 eps: 26204.48 lat (ms,95%): 0.04
+[ 590s ] thds: 1 eps: 26206.81 lat (ms,95%): 0.04
+CPU speed:
+    events per second: 26158.84
+
+Throughput:
+    events/s (eps):                      26158.8378
+    time elapsed:                        600.0016s
+    total number of events:              15695344
+
+Latency (ms):
+         min:                                    0.04
+         avg:                                    0.04
+         max:                                    9.30
+         95th percentile:                        0.04
+         sum:                               598082.28
+
+Threads fairness:
+    events (avg/stddev):           15695344.0000/0.00
+    execution time (avg/stddev):   598.0823/0.00
+
+[SUCCESS] Single-core CPU benchmark completed
+
+=====================================================================
+MULTI-CORE CPU BENCHMARK (10 minutes)
+=====================================================================
+
+[2025-06-03 21:27:21] Running multi-core CPU benchmark (10 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Prime numbers limit: 2000
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 eps: 50577.84 lat (ms,95%): 0.04
+[ 20s ] thds: 2 eps: 50912.93 lat (ms,95%): 0.04
+[ 30s ] thds: 2 eps: 51236.74 lat (ms,95%): 0.04
+[ 40s ] thds: 2 eps: 51272.23 lat (ms,95%): 0.04
+[ 50s ] thds: 2 eps: 51236.62 lat (ms,95%): 0.04
+[ 60s ] thds: 2 eps: 51278.89 lat (ms,95%): 0.04
+[ 70s ] thds: 2 eps: 50580.19 lat (ms,95%): 0.04
+[ 80s ] thds: 2 eps: 51199.21 lat (ms,95%): 0.04
+[ 90s ] thds: 2 eps: 51159.27 lat (ms,95%): 0.04
+[ 100s ] thds: 2 eps: 51275.32 lat (ms,95%): 0.04
+[ 110s ] thds: 2 eps: 51273.40 lat (ms,95%): 0.04
+[ 120s ] thds: 2 eps: 51285.31 lat (ms,95%): 0.04
+[ 130s ] thds: 2 eps: 51258.46 lat (ms,95%): 0.04
+[ 140s ] thds: 2 eps: 50739.95 lat (ms,95%): 0.04
+[ 150s ] thds: 2 eps: 51172.30 lat (ms,95%): 0.04
+[ 160s ] thds: 2 eps: 51187.48 lat (ms,95%): 0.04
+[ 170s ] thds: 2 eps: 51367.54 lat (ms,95%): 0.04
+[ 180s ] thds: 2 eps: 51270.66 lat (ms,95%): 0.04
+[ 190s ] thds: 2 eps: 51192.91 lat (ms,95%): 0.04
+[ 200s ] thds: 2 eps: 50568.21 lat (ms,95%): 0.04
+[ 210s ] thds: 2 eps: 51290.16 lat (ms,95%): 0.04
+[ 220s ] thds: 2 eps: 51174.63 lat (ms,95%): 0.04
+[ 230s ] thds: 2 eps: 51290.19 lat (ms,95%): 0.04
+[ 240s ] thds: 2 eps: 50656.61 lat (ms,95%): 0.04
+[ 250s ] thds: 2 eps: 51274.61 lat (ms,95%): 0.04
+[ 260s ] thds: 2 eps: 50592.69 lat (ms,95%): 0.04
+[ 270s ] thds: 2 eps: 51205.02 lat (ms,95%): 0.04
+[ 280s ] thds: 2 eps: 51195.60 lat (ms,95%): 0.04
+[ 290s ] thds: 2 eps: 51275.52 lat (ms,95%): 0.04
+[ 300s ] thds: 2 eps: 51315.47 lat (ms,95%): 0.04
+[ 310s ] thds: 2 eps: 51199.29 lat (ms,95%): 0.04
+[ 320s ] thds: 2 eps: 51291.91 lat (ms,95%): 0.04
+[ 330s ] thds: 2 eps: 50639.40 lat (ms,95%): 0.04
+[ 340s ] thds: 2 eps: 51188.41 lat (ms,95%): 0.04
+[ 350s ] thds: 2 eps: 51289.29 lat (ms,95%): 0.04
+[ 360s ] thds: 2 eps: 44589.01 lat (ms,95%): 0.04
+[ 370s ] thds: 2 eps: 49295.72 lat (ms,95%): 0.04
+[ 380s ] thds: 2 eps: 51185.87 lat (ms,95%): 0.04
+[ 390s ] thds: 2 eps: 50813.49 lat (ms,95%): 0.04
+[ 400s ] thds: 2 eps: 51267.61 lat (ms,95%): 0.04
+[ 410s ] thds: 2 eps: 51253.99 lat (ms,95%): 0.04
+[ 420s ] thds: 2 eps: 51332.31 lat (ms,95%): 0.04
+[ 430s ] thds: 2 eps: 51261.58 lat (ms,95%): 0.04
+[ 440s ] thds: 2 eps: 51167.91 lat (ms,95%): 0.04
+[ 450s ] thds: 2 eps: 50749.93 lat (ms,95%): 0.04
+[ 460s ] thds: 2 eps: 51240.30 lat (ms,95%): 0.04
+[ 470s ] thds: 2 eps: 51204.97 lat (ms,95%): 0.04
+[ 480s ] thds: 2 eps: 51297.31 lat (ms,95%): 0.04
+[ 490s ] thds: 2 eps: 51236.71 lat (ms,95%): 0.04
+[ 500s ] thds: 2 eps: 51056.48 lat (ms,95%): 0.04
+[ 510s ] thds: 2 eps: 51328.94 lat (ms,95%): 0.04
+[ 520s ] thds: 2 eps: 50623.18 lat (ms,95%): 0.04
+[ 530s ] thds: 2 eps: 51197.97 lat (ms,95%): 0.04
+[ 540s ] thds: 2 eps: 51319.81 lat (ms,95%): 0.04
+[ 550s ] thds: 2 eps: 51160.91 lat (ms,95%): 0.04
+[ 560s ] thds: 2 eps: 51125.19 lat (ms,95%): 0.04
+[ 570s ] thds: 2 eps: 51326.10 lat (ms,95%): 0.04
+[ 580s ] thds: 2 eps: 50522.10 lat (ms,95%): 0.04
+[ 590s ] thds: 2 eps: 50620.41 lat (ms,95%): 0.04
+CPU speed:
+    events per second: 50974.39
+
+Throughput:
+    events/s (eps):                      50974.3872
+    time elapsed:                        600.0002s
+    total number of events:              30584642
+
+Latency (ms):
+         min:                                    0.04
+         avg:                                    0.04
+         max:                                   20.07
+         95th percentile:                        0.04
+         sum:                              1195352.46
+
+Threads fairness:
+    events (avg/stddev):           15292321.0000/3990.00
+    execution time (avg/stddev):   597.6762/0.00
+
+[SUCCESS] Multi-core CPU benchmark completed
+[2025-06-03 21:37:21] Cleaning up PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL CLEANUP
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Dropping table 'sbtest1'...
+Dropping table 'sbtest2'...
+Dropping table 'sbtest3'...
+Dropping table 'sbtest4'...
+Dropping table 'sbtest5'...
+Dropping table 'sbtest6'...
+Dropping table 'sbtest7'...
+Dropping table 'sbtest8'...
+Dropping table 'sbtest9'...
+Dropping table 'sbtest10'...
+[SUCCESS] PostgreSQL cleanup completed
+[2025-06-03 21:37:21] Preparing PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL DATA PREPARATION
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Creating table 'sbtest1'...
+Inserting 1000000 records into 'sbtest1'
+Creating a secondary index on 'sbtest1'...
+Creating table 'sbtest2'...
+Inserting 1000000 records into 'sbtest2'
+Creating a secondary index on 'sbtest2'...
+Creating table 'sbtest3'...
+Inserting 1000000 records into 'sbtest3'
+Creating a secondary index on 'sbtest3'...
+Creating table 'sbtest4'...
+Inserting 1000000 records into 'sbtest4'
+Creating a secondary index on 'sbtest4'...
+Creating table 'sbtest5'...
+Inserting 1000000 records into 'sbtest5'
+Creating a secondary index on 'sbtest5'...
+Creating table 'sbtest6'...
+Inserting 1000000 records into 'sbtest6'
+Creating a secondary index on 'sbtest6'...
+Creating table 'sbtest7'...
+Inserting 1000000 records into 'sbtest7'
+Creating a secondary index on 'sbtest7'...
+Creating table 'sbtest8'...
+Inserting 1000000 records into 'sbtest8'
+Creating a secondary index on 'sbtest8'...
+Creating table 'sbtest9'...
+Inserting 1000000 records into 'sbtest9'
+Creating a secondary index on 'sbtest9'...
+Creating table 'sbtest10'...
+Inserting 1000000 records into 'sbtest10'
+Creating a secondary index on 'sbtest10'...
+[SUCCESS] PostgreSQL test data preparation completed
+[2025-06-03 21:39:19] Starting PostgreSQL benchmarks...
+
+=====================================================================
+READ-ONLY BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-03 21:39:19] Running Read-Only benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 153.38 qps: 2456.85 (r/w/o: 2149.88/0.00/306.97) lat (ms,95%): 20.37 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 289.20 qps: 4626.72 (r/w/o: 4048.32/0.00/578.40) lat (ms,95%): 13.70 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 350.30 qps: 5604.60 (r/w/o: 4904.00/0.00/700.60) lat (ms,95%): 10.27 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 398.60 qps: 6377.10 (r/w/o: 5579.90/0.00/797.20) lat (ms,95%): 9.22 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 474.80 qps: 7596.50 (r/w/o: 6646.90/0.00/949.60) lat (ms,95%): 7.30 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 545.80 qps: 8732.70 (r/w/o: 7641.10/0.00/1091.60) lat (ms,95%): 6.21 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 564.10 qps: 9027.00 (r/w/o: 7898.80/0.00/1128.20) lat (ms,95%): 5.88 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 567.60 qps: 9080.90 (r/w/o: 7945.70/0.00/1135.20) lat (ms,95%): 5.77 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 558.10 qps: 8929.10 (r/w/o: 7812.90/0.00/1116.20) lat (ms,95%): 5.77 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 582.40 qps: 9319.60 (r/w/o: 8154.80/0.00/1164.80) lat (ms,95%): 5.57 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 576.40 qps: 9221.60 (r/w/o: 8068.80/0.00/1152.80) lat (ms,95%): 5.77 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 577.40 qps: 9239.19 (r/w/o: 8084.39/0.00/1154.80) lat (ms,95%): 5.57 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            789362
+        write:                           0
+        other:                           112766
+        total:                           902128
+    transactions:                        56383  (469.84 per sec.)
+    queries:                             902128 (7517.44 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      469.8401
+    time elapsed:                        120.0047s
+    total number of events:              56383
+
+Latency (ms):
+         min:                                    1.26
+         avg:                                    4.26
+         max:                                  143.45
+         95th percentile:                        8.58
+         sum:                               239924.79
+
+Threads fairness:
+    events (avg/stddev):           28191.5000/54.50
+    execution time (avg/stddev):   119.9624/0.00
+
+[SUCCESS] Read-Only benchmark completed
+
+=====================================================================
+WRITE-ONLY BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-03 21:41:19] Running Write-Only benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 475.25 qps: 2851.77 (r/w/o: 0.00/1901.08/950.69) lat (ms,95%): 5.77 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 367.71 qps: 2206.74 (r/w/o: 0.00/1471.33/735.41) lat (ms,95%): 12.52 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 256.40 qps: 1538.30 (r/w/o: 0.00/1025.50/512.80) lat (ms,95%): 21.11 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 449.40 qps: 2696.70 (r/w/o: 0.00/1797.90/898.80) lat (ms,95%): 8.74 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 309.90 qps: 1859.40 (r/w/o: 0.00/1239.60/619.80) lat (ms,95%): 13.46 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 290.60 qps: 1743.30 (r/w/o: 0.00/1162.10/581.20) lat (ms,95%): 19.29 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 342.60 qps: 2055.90 (r/w/o: 0.00/1370.70/685.20) lat (ms,95%): 11.87 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 410.20 qps: 2460.90 (r/w/o: 0.00/1640.50/820.40) lat (ms,95%): 10.27 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 268.30 qps: 1610.10 (r/w/o: 0.00/1073.50/536.60) lat (ms,95%): 12.75 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 384.20 qps: 2304.80 (r/w/o: 0.00/1536.40/768.40) lat (ms,95%): 11.24 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 489.20 qps: 2935.30 (r/w/o: 0.00/1956.90/978.40) lat (ms,95%): 8.13 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 303.10 qps: 1818.30 (r/w/o: 0.00/1212.20/606.10) lat (ms,95%): 15.83 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            0
+        write:                           173880
+        other:                           86940
+        total:                           260820
+    transactions:                        43470  (362.21 per sec.)
+    queries:                             260820 (2173.26 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      362.2104
+    time elapsed:                        120.0131s
+    total number of events:              43470
+
+Latency (ms):
+         min:                                    1.12
+         avg:                                    5.52
+         max:                                  123.11
+         95th percentile:                       12.30
+         sum:                               239947.51
+
+Threads fairness:
+    events (avg/stddev):           21735.0000/17.00
+    execution time (avg/stddev):   119.9738/0.00
+
+[SUCCESS] Write-Only benchmark completed
+
+=====================================================================
+READ-WRITE BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-03 21:43:19] Running Read-Write benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 91.09 qps: 1825.18 (r/w/o: 1278.05/364.76/182.38) lat (ms,95%): 52.89 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 51.20 qps: 1022.02 (r/w/o: 715.21/204.40/102.40) lat (ms,95%): 53.85 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 129.80 qps: 2597.10 (r/w/o: 1818.10/519.40/259.60) lat (ms,95%): 35.59 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 66.90 qps: 1337.50 (r/w/o: 936.30/267.40/133.80) lat (ms,95%): 46.63 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 134.50 qps: 2689.40 (r/w/o: 1882.40/538.00/269.00) lat (ms,95%): 34.33 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 71.80 qps: 1435.90 (r/w/o: 1005.10/287.20/143.60) lat (ms,95%): 68.05 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 109.10 qps: 2183.20 (r/w/o: 1528.20/436.80/218.20) lat (ms,95%): 40.37 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 110.30 qps: 2204.70 (r/w/o: 1543.30/440.80/220.60) lat (ms,95%): 39.65 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 66.80 qps: 1338.00 (r/w/o: 936.80/267.60/133.60) lat (ms,95%): 44.98 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 159.50 qps: 3189.80 (r/w/o: 2233.00/637.80/319.00) lat (ms,95%): 27.66 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 68.30 qps: 1365.60 (r/w/o: 956.00/273.00/136.60) lat (ms,95%): 42.61 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 148.60 qps: 2973.19 (r/w/o: 2080.80/595.20/297.20) lat (ms,95%): 33.72 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            169134
+        write:                           48324
+        other:                           24162
+        total:                           241620
+    transactions:                        12081  (100.67 per sec.)
+    queries:                             241620 (2013.36 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      100.6680
+    time elapsed:                        120.0084s
+    total number of events:              12081
+
+Latency (ms):
+         min:                                    5.09
+         avg:                                   19.86
+         max:                                  184.92
+         95th percentile:                       44.17
+         sum:                               239984.92
+
+Threads fairness:
+    events (avg/stddev):           6040.5000/17.50
+    execution time (avg/stddev):   119.9925/0.00
+
+[SUCCESS] Read-Write benchmark completed
+
+=====================================================================
+OLTP POINT SELECT BENCHMARK
+=====================================================================
+
+[2025-06-03 21:45:20] Running OLTP Point Select benchmark...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            34081
+        write:                           0
+        other:                           0
+        total:                           34081
+    transactions:                        34081  (3407.51 per sec.)
+    queries:                             34081  (3407.51 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      3407.5100
+    time elapsed:                        10.0017s
+    total number of events:              34081
+
+Latency (ms):
+         min:                                    0.04
+         avg:                                    0.59
+         max:                                   13.22
+         95th percentile:                        2.71
+         sum:                                19986.74
+
+Threads fairness:
+    events (avg/stddev):           17040.5000/16.50
+    execution time (avg/stddev):   9.9934/0.00
+
+[SUCCESS] OLTP Point Select benchmark completed
+
+=====================================================================
+OLTP UPDATE INDEX BENCHMARK
+=====================================================================
+
+[2025-06-03 21:45:30] Running OLTP Update Index benchmark...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            0
+        write:                           6780
+        other:                           0
+        total:                           6780
+    transactions:                        6780   (677.84 per sec.)
+    queries:                             6780   (677.84 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      677.8433
+    time elapsed:                        10.0023s
+    total number of events:              6780
+
+Latency (ms):
+         min:                                    1.00
+         avg:                                    2.95
+         max:                                   20.02
+         95th percentile:                        6.91
+         sum:                                19997.30
+
+Threads fairness:
+    events (avg/stddev):           3390.0000/2.00
+    execution time (avg/stddev):   9.9987/0.00
+
+[SUCCESS] OLTP Update Index benchmark completed
+[2025-06-03 21:45:40] Skipping K6 benchmarks - k6 not installed
+[2025-06-03 21:45:40] Cleaning up PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL CLEANUP
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Dropping table 'sbtest1'...
+Dropping table 'sbtest2'...
+Dropping table 'sbtest3'...
+Dropping table 'sbtest4'...
+Dropping table 'sbtest5'...
+Dropping table 'sbtest6'...
+Dropping table 'sbtest7'...
+Dropping table 'sbtest8'...
+Dropping table 'sbtest9'...
+Dropping table 'sbtest10'...
+[SUCCESS] PostgreSQL cleanup completed
+
+=====================================================================
+FINAL CPU BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-03 21:45:40] Running final CPU benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Prime numbers limit: 2000
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 eps: 51069.03 lat (ms,95%): 0.04
+[ 20s ] thds: 2 eps: 51218.23 lat (ms,95%): 0.04
+[ 30s ] thds: 2 eps: 50649.20 lat (ms,95%): 0.04
+[ 40s ] thds: 2 eps: 51103.31 lat (ms,95%): 0.04
+[ 50s ] thds: 2 eps: 51367.20 lat (ms,95%): 0.04
+[ 60s ] thds: 2 eps: 49958.83 lat (ms,95%): 0.04
+[ 70s ] thds: 2 eps: 50538.89 lat (ms,95%): 0.04
+[ 80s ] thds: 2 eps: 51221.42 lat (ms,95%): 0.04
+[ 90s ] thds: 2 eps: 51124.06 lat (ms,95%): 0.04
+[ 100s ] thds: 2 eps: 50538.59 lat (ms,95%): 0.04
+[ 110s ] thds: 2 eps: 51281.82 lat (ms,95%): 0.04
+[ 120s ] thds: 1 eps: 50142.69 lat (ms,95%): 0.04
+CPU speed:
+    events per second: 50850.27
+
+Throughput:
+    events/s (eps):                      50850.2699
+    time elapsed:                        120.0029s
+    total number of events:              6102182
+
+Latency (ms):
+         min:                                    0.04
+         avg:                                    0.04
+         max:                                   20.32
+         95th percentile:                        0.04
+         sum:                               239046.07
+
+Threads fairness:
+    events (avg/stddev):           3051091.0000/16055.00
+    execution time (avg/stddev):   119.5230/0.01
+
+[SUCCESS] Final CPU benchmark completed
+
+=====================================================================
+BENCHMARK COMPLETION
+=====================================================================
+End Time: Tue Jun  3 21:47:40 UTC 2025
+Duration: 30 minutes and 20 seconds
+Results saved to: sysbench_results_c6g.large_20250603_211720.txt
+=====================================================================
+[2025-06-03 21:47:40] ================================================
+[SUCCESS] All benchmarks completed successfully!
+[2025-06-03 21:47:40] Detailed results saved to: sysbench_results_c6g.large_20250603_211720.txt
