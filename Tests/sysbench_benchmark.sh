@@ -334,7 +334,6 @@ run_final_cpu_benchmark() {
     sysbench cpu --cpu-max-prime=2000 --threads=$cores --time=120 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
     success "Final CPU benchmark completed"
 }
-}
 
 # Main execution function
 main() {
