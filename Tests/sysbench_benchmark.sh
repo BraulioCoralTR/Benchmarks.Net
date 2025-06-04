@@ -151,12 +151,12 @@ run_cpu_benchmarks() {
     
     write_section_header "SINGLE-CORE CPU BENCHMARK (10 minutes)"
     log "Running single-core CPU benchmark (10 minutes)..."
-    sysbench cpu --cpu-max-prime=2000 --threads=1 --time=600 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
+    sysbench cpu --cpu-max-prime=2000 --threads=1 --time=120 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
     success "Single-core CPU benchmark completed"
     
     write_section_header "MULTI-CORE CPU BENCHMARK (10 minutes)"
     log "Running multi-core CPU benchmark (10 minutes)..."
-    sysbench cpu --cpu-max-prime=2000 --threads=$cores --time=600 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
+    sysbench cpu --cpu-max-prime=2000 --threads=$cores --time=120 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
     success "Multi-core CPU benchmark completed"
 }
 
@@ -276,7 +276,7 @@ run_k6_benchmarks() {
     fi
     
     log "Starting K6 benchmarks..."
-    
+    truncate_cache_table
     # Check if k6 test files exist
     local k6_base_path="./k6"
     
@@ -333,6 +333,13 @@ run_final_cpu_benchmark() {
     cores=$(nproc --all)
     sysbench cpu --cpu-max-prime=2000 --threads=$cores --time=120 --report-interval=10 run 2>&1 | tee -a "$RESULTS_FILE"
     success "Final CPU benchmark completed"
+}
+
+# Truncate cahe table
+truncate_cache_table() {
+    log "Truncating cache table..."
+    sudo -i -u postgres psql -d sbtest -c "TRUNCATE TABLE cache;" 2>&1 | tee -a "$RESULTS_FILE" || warning "Failed to truncate cache table (may not exist)"
+    success "Cache table truncated"
 }
 
 # Main execution function

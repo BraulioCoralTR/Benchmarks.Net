@@ -88,19 +88,24 @@ export default function (data) {
     tags: { endpoint: "postgres_get" },
   });
   check(
-    postgresRes,
-    {
-      "Postgres: get status is 200": (r) => r.status === 200,
-      "Postgres: get response is valid JSON": (r) => {
-        try {
-          const jsonData = r.json(); // Check if the response body is valid JSON
-          return jsonData !== null && typeof jsonData === "object"; // Basic validation
-        } catch (e) {
-          console.error(`Postgres invalid JSON for key ${key}: ${r.body}`);
-          return false;
-        }
+      postgresRes,
+      {
+          "Postgres: get status is 200": (r) => r.status === 200,
+          "Postgres: get response has valid status": (r) => r.status >= 200 && r.status < 300,
+          "Postgres: get response is valid JSON": (r) => {
+              if (r.status !== 200) {
+                  console.error(`Postgres non-200 status ${r.status} for key ${key}: ${r.body}`);
+                  return false; // Don't try to parse JSON for non-200 responses
+              }
+              try {
+                  const jsonData = r.json();
+                  return jsonData !== null && typeof jsonData === "object";
+              } catch (e) {
+                  console.error(`Postgres invalid JSON for key ${key} (status ${r.status}): ${r.body}`);
+                  return false;
+              }
+          },
       },
-    },
     { endpoint: "postgres_get" }
   );
 }

@@ -53,6 +53,6 @@ export function teardown() {
   console.log(
     `INFO: Insert test finished.`
   );
-  // http.del(`${BASE_URL}/postgres/cache`);
-  // console.log('INFO: Teardown cleanup finished.');
+  http.del(`${BASE_URL}/postgres/cache`);
+  console.log('INFO: Teardown cleanup finished.');
 }
