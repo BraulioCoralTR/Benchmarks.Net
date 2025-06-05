@@ -376,7 +376,7 @@ main() {
     cleanup_postgresql
     
     # Final CPU benchmark
-    run_final_cpu_benchmark
+    # run_final_cpu_benchmark
     
     # Write completion timestamp
     {
