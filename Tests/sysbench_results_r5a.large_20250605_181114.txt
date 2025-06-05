@@ -1,0 +1,1349 @@
+=====================================================================
+SYSBENCH COMPREHENSIVE BENCHMARK RESULTS
+=====================================================================
+Start Time: Thu Jun  5 18:11:14 UTC 2025
+Hostname: i-088c3e7d009b5997a.8067.aws-int.thomsonreuters.com
+Instance Type: r5a.large
+Operating System: Linux i-088c3e7d009b5997a.8067.aws-int.thomsonreuters.com 6.1.130-139.222.amzn2023.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Mar 11 01:10:58 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+CPU Info: AMD EPYC 7571 AMD EPYC 7571
+CPU Cores: 2
+Memory: 15Gi
+=====================================================================
+
+[2025-06-05 18:11:14] Starting Sysbench Comprehensive Benchmark Suite
+[2025-06-05 18:11:14] Results will be saved to: sysbench_results_r5a.large_20250605_181114.txt
+[2025-06-05 18:11:14] ================================================
+[2025-06-05 18:11:14] Checking prerequisites...
+[2025-06-05 18:11:14] k6 found - K6 tests will be included
+[SUCCESS] Prerequisites check passed
+[2025-06-05 18:11:14] Setting up PostgreSQL database and user...
+[SUCCESS] PostgreSQL setup completed
+[2025-06-05 18:11:16] Starting CPU benchmarks...
+[2025-06-05 18:11:16] Detected 2 CPU cores
+
+=====================================================================
+SINGLE-CORE CPU BENCHMARK (10 minutes)
+=====================================================================
+
+[2025-06-05 18:11:16] Running single-core CPU benchmark (10 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Prime numbers limit: 2000
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 1 eps: 9452.62 lat (ms,95%): 0.09
+[ 20s ] thds: 1 eps: 9315.08 lat (ms,95%): 0.09
+[ 30s ] thds: 1 eps: 9454.06 lat (ms,95%): 0.09
+[ 40s ] thds: 1 eps: 9698.83 lat (ms,95%): 0.09
+[ 50s ] thds: 1 eps: 9482.52 lat (ms,95%): 0.09
+[ 60s ] thds: 1 eps: 9348.16 lat (ms,95%): 0.09
+[ 70s ] thds: 1 eps: 10593.40 lat (ms,95%): 0.09
+[ 80s ] thds: 1 eps: 10314.95 lat (ms,95%): 0.09
+[ 90s ] thds: 1 eps: 10622.95 lat (ms,95%): 0.09
+[ 100s ] thds: 1 eps: 11505.08 lat (ms,95%): 0.09
+[ 110s ] thds: 1 eps: 9831.78 lat (ms,95%): 0.09
+CPU speed:
+    events per second: 10112.95
+
+Throughput:
+    events/s (eps):                      10112.9516
+    time elapsed:                        120.0010s
+    total number of events:              1213564
+
+Latency (ms):
+         min:                                    0.08
+         avg:                                    0.10
+         max:                                   20.78
+         95th percentile:                        0.09
+         sum:                               119623.66
+
+Threads fairness:
+    events (avg/stddev):           1213564.0000/0.00
+    execution time (avg/stddev):   119.6237/0.00
+
+[SUCCESS] Single-core CPU benchmark completed
+
+=====================================================================
+MULTI-CORE CPU BENCHMARK (10 minutes)
+=====================================================================
+
+[2025-06-05 18:13:16] Running multi-core CPU benchmark (10 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Prime numbers limit: 2000
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 eps: 11688.93 lat (ms,95%): 0.33
+[ 20s ] thds: 2 eps: 12164.73 lat (ms,95%): 0.23
+[ 30s ] thds: 2 eps: 12907.50 lat (ms,95%): 0.17
+[ 40s ] thds: 2 eps: 12848.40 lat (ms,95%): 0.17
+[ 50s ] thds: 2 eps: 12887.60 lat (ms,95%): 0.17
+[ 60s ] thds: 2 eps: 12899.10 lat (ms,95%): 0.17
+[ 70s ] thds: 2 eps: 12753.70 lat (ms,95%): 0.17
+[ 80s ] thds: 2 eps: 12870.61 lat (ms,95%): 0.17
+[ 90s ] thds: 2 eps: 12901.59 lat (ms,95%): 0.17
+[ 100s ] thds: 2 eps: 12887.14 lat (ms,95%): 0.17
+[ 110s ] thds: 2 eps: 12867.93 lat (ms,95%): 0.17
+CPU speed:
+    events per second: 12715.30
+
+Throughput:
+    events/s (eps):                      12715.3044
+    time elapsed:                        120.0004s
+    total number of events:              1525842
+
+Latency (ms):
+         min:                                    0.08
+         avg:                                    0.16
+         max:                                   40.22
+         95th percentile:                        0.17
+         sum:                               239535.38
+
+Threads fairness:
+    events (avg/stddev):           762921.0000/5013.00
+    execution time (avg/stddev):   119.7677/0.02
+
+[SUCCESS] Multi-core CPU benchmark completed
+[2025-06-05 18:15:16] Cleaning up PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL CLEANUP
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Dropping table 'sbtest1'...
+Dropping table 'sbtest2'...
+Dropping table 'sbtest3'...
+Dropping table 'sbtest4'...
+Dropping table 'sbtest5'...
+Dropping table 'sbtest6'...
+Dropping table 'sbtest7'...
+Dropping table 'sbtest8'...
+Dropping table 'sbtest9'...
+Dropping table 'sbtest10'...
+[SUCCESS] PostgreSQL cleanup completed
+[2025-06-05 18:15:16] Preparing PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL DATA PREPARATION
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Creating table 'sbtest1'...
+Inserting 1000000 records into 'sbtest1'
+Creating a secondary index on 'sbtest1'...
+Creating table 'sbtest2'...
+Inserting 1000000 records into 'sbtest2'
+Creating a secondary index on 'sbtest2'...
+Creating table 'sbtest3'...
+Inserting 1000000 records into 'sbtest3'
+Creating a secondary index on 'sbtest3'...
+Creating table 'sbtest4'...
+Inserting 1000000 records into 'sbtest4'
+Creating a secondary index on 'sbtest4'...
+Creating table 'sbtest5'...
+Inserting 1000000 records into 'sbtest5'
+Creating a secondary index on 'sbtest5'...
+Creating table 'sbtest6'...
+Inserting 1000000 records into 'sbtest6'
+Creating a secondary index on 'sbtest6'...
+Creating table 'sbtest7'...
+Inserting 1000000 records into 'sbtest7'
+Creating a secondary index on 'sbtest7'...
+Creating table 'sbtest8'...
+Inserting 1000000 records into 'sbtest8'
+Creating a secondary index on 'sbtest8'...
+Creating table 'sbtest9'...
+Inserting 1000000 records into 'sbtest9'
+Creating a secondary index on 'sbtest9'...
+Creating table 'sbtest10'...
+Inserting 1000000 records into 'sbtest10'
+Creating a secondary index on 'sbtest10'...
+[SUCCESS] PostgreSQL test data preparation completed
+[2025-06-05 18:18:13] Starting PostgreSQL benchmarks...
+
+=====================================================================
+READ-ONLY BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-05 18:18:13] Running Read-Only benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 732.95 qps: 11728.64 (r/w/o: 10262.64/0.00/1466.01) lat (ms,95%): 3.55 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 762.72 qps: 12203.95 (r/w/o: 10678.40/0.00/1525.54) lat (ms,95%): 3.30 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 764.10 qps: 12224.90 (r/w/o: 10696.70/0.00/1528.20) lat (ms,95%): 3.49 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 827.50 qps: 13241.20 (r/w/o: 11586.20/0.00/1655.00) lat (ms,95%): 2.57 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 810.90 qps: 12973.69 (r/w/o: 11351.89/0.00/1621.80) lat (ms,95%): 2.86 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 824.50 qps: 13191.90 (r/w/o: 11542.90/0.00/1649.00) lat (ms,95%): 2.61 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 822.20 qps: 13154.90 (r/w/o: 11510.50/0.00/1644.40) lat (ms,95%): 2.61 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 826.20 qps: 13219.30 (r/w/o: 11566.90/0.00/1652.40) lat (ms,95%): 2.57 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 803.80 qps: 12861.50 (r/w/o: 11253.90/0.00/1607.60) lat (ms,95%): 2.71 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 826.30 qps: 13221.31 (r/w/o: 11568.71/0.00/1652.60) lat (ms,95%): 2.57 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 813.50 qps: 13015.38 (r/w/o: 11388.39/0.00/1627.00) lat (ms,95%): 2.66 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 826.20 qps: 13219.08 (r/w/o: 11566.68/0.00/1652.40) lat (ms,95%): 2.57 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            1349768
+        write:                           0
+        other:                           192824
+        total:                           1542592
+    transactions:                        96412  (803.37 per sec.)
+    queries:                             1542592 (12853.91 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      803.3693
+    time elapsed:                        120.0096s
+    total number of events:              96412
+
+Latency (ms):
+         min:                                    2.04
+         avg:                                    2.49
+         max:                                   23.96
+         95th percentile:                        2.81
+         sum:                               239832.64
+
+Threads fairness:
+    events (avg/stddev):           48206.0000/80.00
+    execution time (avg/stddev):   119.9163/0.00
+
+[SUCCESS] Read-Only benchmark completed
+
+=====================================================================
+WRITE-ONLY BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-05 18:20:14] Running Write-Only benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 692.15 qps: 4153.52 (r/w/o: 0.00/2769.02/1384.51) lat (ms,95%): 3.49 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 324.41 qps: 1946.88 (r/w/o: 0.00/1298.05/648.83) lat (ms,95%): 18.28 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 633.20 qps: 3798.62 (r/w/o: 0.00/2532.31/1266.31) lat (ms,95%): 4.10 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 469.30 qps: 2816.41 (r/w/o: 0.00/1877.70/938.70) lat (ms,95%): 14.73 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 328.80 qps: 1972.80 (r/w/o: 0.00/1315.20/657.60) lat (ms,95%): 18.28 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 690.60 qps: 4143.21 (r/w/o: 0.00/2762.01/1381.20) lat (ms,95%): 3.75 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 205.40 qps: 1232.40 (r/w/o: 0.00/821.60/410.80) lat (ms,95%): 19.65 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 571.60 qps: 3430.01 (r/w/o: 0.00/2286.81/1143.20) lat (ms,95%): 4.57 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 528.10 qps: 3168.59 (r/w/o: 0.00/2112.40/1056.20) lat (ms,95%): 12.52 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 269.90 qps: 1618.99 (r/w/o: 0.00/1079.19/539.80) lat (ms,95%): 18.95 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 685.70 qps: 4114.61 (r/w/o: 0.00/2743.21/1371.40) lat (ms,95%): 3.82 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 296.00 qps: 1776.01 (r/w/o: 0.00/1184.01/592.00) lat (ms,95%): 18.61 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            0
+        write:                           227820
+        other:                           113910
+        total:                           341730
+    transactions:                        56955  (474.58 per sec.)
+    queries:                             341730 (2847.46 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      474.5758
+    time elapsed:                        120.0124s
+    total number of events:              56955
+
+Latency (ms):
+         min:                                    1.35
+         avg:                                    4.21
+         max:                                  158.78
+         95th percentile:                       14.46
+         sum:                               239908.07
+
+Threads fairness:
+    events (avg/stddev):           28477.5000/15.50
+    execution time (avg/stddev):   119.9540/0.01
+
+[SUCCESS] Write-Only benchmark completed
+
+=====================================================================
+READ-WRITE BENCHMARK (2 minutes)
+=====================================================================
+
+[2025-06-05 18:22:14] Running Read-Write benchmark (2 minutes)...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Report intermediate results every 10 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+[ 10s ] thds: 2 tps: 226.16 qps: 4525.42 (r/w/o: 3168.25/904.64/452.52) lat (ms,95%): 19.29 err/s: 0.00 reconn/s: 0.00
+[ 20s ] thds: 2 tps: 236.30 qps: 4726.89 (r/w/o: 3308.69/945.60/472.60) lat (ms,95%): 18.28 err/s: 0.00 reconn/s: 0.00
+[ 30s ] thds: 2 tps: 116.80 qps: 2336.73 (r/w/o: 1635.52/467.61/233.60) lat (ms,95%): 24.38 err/s: 0.00 reconn/s: 0.00
+[ 40s ] thds: 2 tps: 285.30 qps: 5705.47 (r/w/o: 3994.08/1140.79/570.60) lat (ms,95%): 12.52 err/s: 0.00 reconn/s: 0.00
+[ 50s ] thds: 2 tps: 268.30 qps: 5366.49 (r/w/o: 3756.29/1073.60/536.60) lat (ms,95%): 17.95 err/s: 0.00 reconn/s: 0.00
+[ 60s ] thds: 2 tps: 129.00 qps: 2580.01 (r/w/o: 1806.01/516.00/258.00) lat (ms,95%): 21.89 err/s: 0.00 reconn/s: 0.00
+[ 70s ] thds: 2 tps: 277.40 qps: 5547.71 (r/w/o: 3883.61/1109.30/554.80) lat (ms,95%): 13.22 err/s: 0.00 reconn/s: 0.00
+[ 80s ] thds: 2 tps: 358.70 qps: 7174.28 (r/w/o: 5021.79/1435.10/717.40) lat (ms,95%): 6.91 err/s: 0.00 reconn/s: 0.00
+[ 90s ] thds: 2 tps: 169.40 qps: 3386.80 (r/w/o: 2370.80/677.20/338.80) lat (ms,95%): 20.00 err/s: 0.00 reconn/s: 0.00
+[ 100s ] thds: 2 tps: 202.40 qps: 4047.10 (r/w/o: 2833.10/809.20/404.80) lat (ms,95%): 18.95 err/s: 0.00 reconn/s: 0.00
+[ 110s ] thds: 2 tps: 363.00 qps: 7261.20 (r/w/o: 5083.10/1452.10/726.00) lat (ms,95%): 7.43 err/s: 0.00 reconn/s: 0.00
+[ 120s ] thds: 2 tps: 294.40 qps: 5888.89 (r/w/o: 4121.79/1178.30/588.80) lat (ms,95%): 17.95 err/s: 0.00 reconn/s: 0.00
+SQL statistics:
+    queries performed:
+        read:                            409836
+        write:                           117096
+        other:                           58548
+        total:                           585480
+    transactions:                        29274  (243.92 per sec.)
+    queries:                             585480 (4878.49 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      243.9244
+    time elapsed:                        120.0126s
+    total number of events:              29274
+
+Latency (ms):
+         min:                                    3.72
+         avg:                                    8.20
+         max:                                  233.99
+         95th percentile:                       18.61
+         sum:                               239941.44
+
+Threads fairness:
+    events (avg/stddev):           14637.0000/8.00
+    execution time (avg/stddev):   119.9707/0.01
+
+[SUCCESS] Read-Write benchmark completed
+
+=====================================================================
+OLTP POINT SELECT BENCHMARK
+=====================================================================
+
+[2025-06-05 18:24:14] Running OLTP Point Select benchmark...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            162183
+        write:                           0
+        other:                           0
+        total:                           162183
+    transactions:                        162183 (16217.27 per sec.)
+    queries:                             162183 (16217.27 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      16217.2724
+    time elapsed:                        10.0006s
+    total number of events:              162183
+
+Latency (ms):
+         min:                                    0.07
+         avg:                                    0.12
+         max:                                   14.73
+         95th percentile:                        0.18
+         sum:                                19888.70
+
+Threads fairness:
+    events (avg/stddev):           81091.5000/568.50
+    execution time (avg/stddev):   9.9444/0.00
+
+[SUCCESS] OLTP Point Select benchmark completed
+
+=====================================================================
+OLTP UPDATE INDEX BENCHMARK
+=====================================================================
+
+[2025-06-05 18:24:24] Running OLTP Update Index benchmark...
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 2
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            0
+        write:                           7563
+        other:                           0
+        total:                           7563
+    transactions:                        7563   (756.16 per sec.)
+    queries:                             7563   (756.16 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+Throughput:
+    events/s (eps):                      756.1637
+    time elapsed:                        10.0018s
+    total number of events:              7563
+
+Latency (ms):
+         min:                                    1.16
+         avg:                                    2.64
+         max:                                   29.27
+         95th percentile:                        2.71
+         sum:                                19992.77
+
+Threads fairness:
+    events (avg/stddev):           3781.5000/3.50
+    execution time (avg/stddev):   9.9964/0.00
+
+[SUCCESS] OLTP Update Index benchmark completed
+[2025-06-05 18:24:34] Starting K6 benchmarks...
+[2025-06-05 18:24:34] Truncating cache table...
+TRUNCATE TABLE
+[SUCCESS] Cache table truncated
+
+=====================================================================
+K6 AOT INSERT TEST
+=====================================================================
+
+[2025-06-05 18:24:34] Running K6 AOT Insert test...
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./k6/aot/insert-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 80 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 100000 iterations shared among 80 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+
+running (00m01.0s), 80/80 VUs, 566 complete and 0 interrupted iterations
+default   [   1% ] 80 VUs  00m01.0s/10m0s  000566/100000 shared iters
+
+running (00m02.0s), 80/80 VUs, 2216 complete and 0 interrupted iterations
+default   [   2% ] 80 VUs  00m02.0s/10m0s  002216/100000 shared iters
+
+running (00m03.0s), 80/80 VUs, 4083 complete and 0 interrupted iterations
+default   [   4% ] 80 VUs  00m03.0s/10m0s  004083/100000 shared iters
+
+running (00m04.0s), 80/80 VUs, 6126 complete and 0 interrupted iterations
+default   [   6% ] 80 VUs  00m04.0s/10m0s  006126/100000 shared iters
+
+running (00m05.0s), 80/80 VUs, 8074 complete and 0 interrupted iterations
+default   [   8% ] 80 VUs  00m05.0s/10m0s  008074/100000 shared iters
+
+running (00m06.0s), 80/80 VUs, 10220 complete and 0 interrupted iterations
+default   [  10% ] 80 VUs  00m06.0s/10m0s  010220/100000 shared iters
+
+running (00m07.0s), 80/80 VUs, 12333 complete and 0 interrupted iterations
+default   [  12% ] 80 VUs  00m07.0s/10m0s  012333/100000 shared iters
+
+running (00m08.0s), 80/80 VUs, 14447 complete and 0 interrupted iterations
+default   [  14% ] 80 VUs  00m08.0s/10m0s  014447/100000 shared iters
+
+running (00m09.0s), 80/80 VUs, 16595 complete and 0 interrupted iterations
+default   [  17% ] 80 VUs  00m09.0s/10m0s  016595/100000 shared iters
+
+running (00m10.0s), 80/80 VUs, 18661 complete and 0 interrupted iterations
+default   [  19% ] 80 VUs  00m10.0s/10m0s  018661/100000 shared iters
+
+running (00m11.0s), 80/80 VUs, 20539 complete and 0 interrupted iterations
+default   [  21% ] 80 VUs  00m11.0s/10m0s  020539/100000 shared iters
+
+running (00m12.0s), 80/80 VUs, 22610 complete and 0 interrupted iterations
+default   [  23% ] 80 VUs  00m12.0s/10m0s  022610/100000 shared iters
+
+running (00m13.0s), 80/80 VUs, 24805 complete and 0 interrupted iterations
+default   [  25% ] 80 VUs  00m13.0s/10m0s  024805/100000 shared iters
+
+running (00m14.0s), 80/80 VUs, 26805 complete and 0 interrupted iterations
+default   [  27% ] 80 VUs  00m14.0s/10m0s  026805/100000 shared iters
+
+running (00m15.0s), 80/80 VUs, 28955 complete and 0 interrupted iterations
+default   [  29% ] 80 VUs  00m15.0s/10m0s  028955/100000 shared iters
+
+running (00m16.0s), 80/80 VUs, 30938 complete and 0 interrupted iterations
+default   [  31% ] 80 VUs  00m16.0s/10m0s  030938/100000 shared iters
+
+running (00m17.0s), 80/80 VUs, 33060 complete and 0 interrupted iterations
+default   [  33% ] 80 VUs  00m17.0s/10m0s  033060/100000 shared iters
+
+running (00m18.0s), 80/80 VUs, 35111 complete and 0 interrupted iterations
+default   [  35% ] 80 VUs  00m18.0s/10m0s  035111/100000 shared iters
+
+running (00m19.0s), 80/80 VUs, 37229 complete and 0 interrupted iterations
+default   [  37% ] 80 VUs  00m19.0s/10m0s  037229/100000 shared iters
+
+running (00m20.0s), 80/80 VUs, 39244 complete and 0 interrupted iterations
+default   [  39% ] 80 VUs  00m20.0s/10m0s  039244/100000 shared iters
+
+running (00m21.0s), 80/80 VUs, 41088 complete and 0 interrupted iterations
+default   [  41% ] 80 VUs  00m21.0s/10m0s  041088/100000 shared iters
+
+running (00m22.0s), 80/80 VUs, 43144 complete and 0 interrupted iterations
+default   [  43% ] 80 VUs  00m22.0s/10m0s  043144/100000 shared iters
+
+running (00m23.0s), 80/80 VUs, 45273 complete and 0 interrupted iterations
+default   [  45% ] 80 VUs  00m23.0s/10m0s  045273/100000 shared iters
+
+running (00m24.0s), 80/80 VUs, 47358 complete and 0 interrupted iterations
+default   [  47% ] 80 VUs  00m24.0s/10m0s  047358/100000 shared iters
+
+running (00m25.0s), 80/80 VUs, 49481 complete and 0 interrupted iterations
+default   [  49% ] 80 VUs  00m25.0s/10m0s  049481/100000 shared iters
+
+running (00m26.0s), 80/80 VUs, 51304 complete and 0 interrupted iterations
+default   [  51% ] 80 VUs  00m26.0s/10m0s  051304/100000 shared iters
+
+running (00m27.0s), 80/80 VUs, 52775 complete and 0 interrupted iterations
+default   [  53% ] 80 VUs  00m27.0s/10m0s  052775/100000 shared iters
+
+running (00m28.0s), 80/80 VUs, 54688 complete and 0 interrupted iterations
+default   [  55% ] 80 VUs  00m28.0s/10m0s  054688/100000 shared iters
+
+running (00m29.0s), 80/80 VUs, 56713 complete and 0 interrupted iterations
+default   [  57% ] 80 VUs  00m29.0s/10m0s  056713/100000 shared iters
+
+running (00m30.0s), 80/80 VUs, 58655 complete and 0 interrupted iterations
+default   [  59% ] 80 VUs  00m30.0s/10m0s  058655/100000 shared iters
+
+running (00m31.0s), 80/80 VUs, 60574 complete and 0 interrupted iterations
+default   [  61% ] 80 VUs  00m31.0s/10m0s  060574/100000 shared iters
+
+running (00m32.0s), 80/80 VUs, 62437 complete and 0 interrupted iterations
+default   [  62% ] 80 VUs  00m32.0s/10m0s  062437/100000 shared iters
+
+running (00m33.0s), 80/80 VUs, 64473 complete and 0 interrupted iterations
+default   [  64% ] 80 VUs  00m33.0s/10m0s  064473/100000 shared iters
+
+running (00m34.0s), 80/80 VUs, 66539 complete and 0 interrupted iterations
+default   [  67% ] 80 VUs  00m34.0s/10m0s  066539/100000 shared iters
+
+running (00m35.0s), 80/80 VUs, 68582 complete and 0 interrupted iterations
+default   [  69% ] 80 VUs  00m35.0s/10m0s  068582/100000 shared iters
+
+running (00m36.0s), 80/80 VUs, 70609 complete and 0 interrupted iterations
+default   [  71% ] 80 VUs  00m36.0s/10m0s  070609/100000 shared iters
+
+running (00m37.0s), 80/80 VUs, 72506 complete and 0 interrupted iterations
+default   [  73% ] 80 VUs  00m37.0s/10m0s  072506/100000 shared iters
+
+running (00m38.0s), 80/80 VUs, 74445 complete and 0 interrupted iterations
+default   [  74% ] 80 VUs  00m38.0s/10m0s  074445/100000 shared iters
+
+running (00m39.0s), 80/80 VUs, 76403 complete and 0 interrupted iterations
+default   [  76% ] 80 VUs  00m39.0s/10m0s  076403/100000 shared iters
+
+running (00m40.0s), 80/80 VUs, 78335 complete and 0 interrupted iterations
+default   [  78% ] 80 VUs  00m40.0s/10m0s  078335/100000 shared iters
+
+running (00m41.0s), 80/80 VUs, 80234 complete and 0 interrupted iterations
+default   [  80% ] 80 VUs  00m41.0s/10m0s  080234/100000 shared iters
+
+running (00m42.0s), 80/80 VUs, 81846 complete and 0 interrupted iterations
+default   [  82% ] 80 VUs  00m42.0s/10m0s  081846/100000 shared iters
+
+running (00m43.0s), 80/80 VUs, 83941 complete and 0 interrupted iterations
+default   [  84% ] 80 VUs  00m43.0s/10m0s  083941/100000 shared iters
+
+running (00m44.0s), 80/80 VUs, 86099 complete and 0 interrupted iterations
+default   [  86% ] 80 VUs  00m44.0s/10m0s  086099/100000 shared iters
+
+running (00m45.0s), 80/80 VUs, 88160 complete and 0 interrupted iterations
+default   [  88% ] 80 VUs  00m45.0s/10m0s  088160/100000 shared iters
+
+running (00m46.0s), 80/80 VUs, 90159 complete and 0 interrupted iterations
+default   [  90% ] 80 VUs  00m46.0s/10m0s  090159/100000 shared iters
+
+running (00m47.0s), 80/80 VUs, 92107 complete and 0 interrupted iterations
+default   [  92% ] 80 VUs  00m47.0s/10m0s  092107/100000 shared iters
+
+running (00m48.0s), 80/80 VUs, 94169 complete and 0 interrupted iterations
+default   [  94% ] 80 VUs  00m48.0s/10m0s  094169/100000 shared iters
+
+running (00m49.0s), 80/80 VUs, 96224 complete and 0 interrupted iterations
+default   [  96% ] 80 VUs  00m49.0s/10m0s  096224/100000 shared iters
+
+running (00m50.0s), 80/80 VUs, 98229 complete and 0 interrupted iterations
+default   [  98% ] 80 VUs  00m50.0s/10m0s  098229/100000 shared iters
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Insert test finished." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Teardown cleanup finished." source=console
+
+
+  █ THRESHOLDS 
+
+    checks{endpoint:postgres_insert}
+    ✓ 'rate>0.99' rate=100.00%
+
+    http_req_duration{endpoint:postgres_insert}
+    ✓ 'p(95)<300' p(95)=114.91ms
+
+    http_req_failed{endpoint:postgres_insert}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 100000  1967.763332/s
+    checks_succeeded...................: 100.00% 100000 out of 100000
+    checks_failed......................: 0.00%   0 out of 100000
+
+    ✓ Postgres: insert status is 200
+
+    HTTP
+    http_req_duration...........................................................: avg=40.26ms min=617.17µs med=27ms    max=3.14s p(90)=84.95ms p(95)=114.91ms
+      { endpoint:postgres_insert }..............................................: avg=40.26ms min=617.17µs med=27ms    max=3.14s p(90)=84.95ms p(95)=114.91ms
+      { expected_response:true }................................................: avg=40.26ms min=617.17µs med=27ms    max=3.14s p(90)=84.95ms p(95)=114.91ms
+    http_req_failed.............................................................: 0.00%  0 out of 100001
+      { endpoint:postgres_insert }..............................................: 0.00%  0 out of 100000
+    http_reqs...................................................................: 100001 1967.78301/s
+
+    EXECUTION
+    iteration_duration..........................................................: avg=40.55ms min=750.65µs med=27.27ms max=3.15s p(90)=85.22ms p(95)=115.2ms 
+    iterations..................................................................: 100000 1967.763332/s
+    vus.........................................................................: 80     min=80          max=80
+    vus_max.....................................................................: 80     min=80          max=80
+
+    NETWORK
+    data_received...............................................................: 9.2 MB 181 kB/s
+    data_sent...................................................................: 26 MB  512 kB/s
+
+
+
+
+running (00m50.8s), 00/80 VUs, 100000 complete and 0 interrupted iterations
+default ✓ [ 100% ] 80 VUs  00m50.8s/10m0s  100000/100000 shared iters
+[SUCCESS] K6 AOT Insert test completed
+
+=====================================================================
+K6 AOT QUERY TEST
+=====================================================================
+
+[2025-06-05 18:25:26] Running K6 AOT Query test...
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./k6/aot/query-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 80 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 100000 iterations shared among 80 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setting up 100 keys for query test..." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 10/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 20/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 30/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 40/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 50/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 60/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 70/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 80/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 90/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup progress... 100/100 keys inserted." source=console
+time="2025-06-05T18:25:26Z" level=info msg="INFO: Setup complete. 100 keys available for querying." source=console
+
+running (00m01.0s), 80/80 VUs, 1895 complete and 0 interrupted iterations
+default   [   2% ] 80 VUs  00m00.9s/10m0s  001895/100000 shared iters
+
+running (00m02.0s), 80/80 VUs, 3991 complete and 0 interrupted iterations
+default   [   4% ] 80 VUs  00m01.9s/10m0s  003991/100000 shared iters
+
+running (00m03.0s), 80/80 VUs, 6311 complete and 0 interrupted iterations
+default   [   6% ] 80 VUs  00m02.9s/10m0s  006311/100000 shared iters
+
+running (00m04.0s), 80/80 VUs, 8492 complete and 0 interrupted iterations
+default   [   8% ] 80 VUs  00m03.9s/10m0s  008493/100000 shared iters
+
+running (00m05.0s), 80/80 VUs, 10884 complete and 0 interrupted iterations
+default   [  11% ] 80 VUs  00m04.9s/10m0s  010884/100000 shared iters
+
+running (00m06.0s), 80/80 VUs, 13157 complete and 0 interrupted iterations
+default   [  13% ] 80 VUs  00m05.9s/10m0s  013157/100000 shared iters
+
+running (00m07.0s), 80/80 VUs, 15327 complete and 0 interrupted iterations
+default   [  15% ] 80 VUs  00m06.9s/10m0s  015327/100000 shared iters
+
+running (00m08.0s), 80/80 VUs, 17550 complete and 0 interrupted iterations
+default   [  18% ] 80 VUs  00m07.9s/10m0s  017550/100000 shared iters
+
+running (00m09.0s), 80/80 VUs, 19915 complete and 0 interrupted iterations
+default   [  20% ] 80 VUs  00m08.9s/10m0s  019915/100000 shared iters
+
+running (00m10.0s), 80/80 VUs, 22270 complete and 0 interrupted iterations
+default   [  22% ] 80 VUs  00m09.9s/10m0s  022270/100000 shared iters
+
+running (00m11.0s), 80/80 VUs, 24725 complete and 0 interrupted iterations
+default   [  25% ] 80 VUs  00m10.9s/10m0s  024725/100000 shared iters
+
+running (00m12.0s), 80/80 VUs, 26811 complete and 0 interrupted iterations
+default   [  27% ] 80 VUs  00m11.9s/10m0s  026851/100000 shared iters
+
+running (00m13.0s), 80/80 VUs, 29215 complete and 0 interrupted iterations
+default   [  29% ] 80 VUs  00m12.9s/10m0s  029215/100000 shared iters
+
+running (00m14.0s), 80/80 VUs, 31516 complete and 0 interrupted iterations
+default   [  32% ] 80 VUs  00m13.9s/10m0s  031516/100000 shared iters
+
+running (00m15.0s), 80/80 VUs, 33955 complete and 0 interrupted iterations
+default   [  34% ] 80 VUs  00m14.9s/10m0s  033955/100000 shared iters
+
+running (00m16.0s), 80/80 VUs, 36281 complete and 0 interrupted iterations
+default   [  36% ] 80 VUs  00m15.9s/10m0s  036281/100000 shared iters
+
+running (00m17.0s), 80/80 VUs, 38591 complete and 0 interrupted iterations
+default   [  39% ] 80 VUs  00m16.9s/10m0s  038591/100000 shared iters
+
+running (00m18.0s), 80/80 VUs, 40919 complete and 0 interrupted iterations
+default   [  41% ] 80 VUs  00m17.9s/10m0s  040919/100000 shared iters
+
+running (00m19.0s), 80/80 VUs, 43308 complete and 0 interrupted iterations
+default   [  43% ] 80 VUs  00m18.9s/10m0s  043308/100000 shared iters
+
+running (00m20.0s), 80/80 VUs, 45562 complete and 0 interrupted iterations
+default   [  46% ] 80 VUs  00m19.9s/10m0s  045562/100000 shared iters
+
+running (00m21.0s), 80/80 VUs, 48035 complete and 0 interrupted iterations
+default   [  48% ] 80 VUs  00m20.9s/10m0s  048035/100000 shared iters
+
+running (00m22.0s), 80/80 VUs, 50406 complete and 0 interrupted iterations
+default   [  50% ] 80 VUs  00m21.9s/10m0s  050406/100000 shared iters
+
+running (00m23.0s), 80/80 VUs, 52483 complete and 0 interrupted iterations
+default   [  52% ] 80 VUs  00m22.9s/10m0s  052483/100000 shared iters
+
+running (00m24.0s), 80/80 VUs, 54662 complete and 0 interrupted iterations
+default   [  55% ] 80 VUs  00m23.9s/10m0s  054662/100000 shared iters
+
+running (00m25.0s), 80/80 VUs, 57059 complete and 0 interrupted iterations
+default   [  57% ] 80 VUs  00m24.9s/10m0s  057059/100000 shared iters
+
+running (00m26.0s), 80/80 VUs, 59481 complete and 0 interrupted iterations
+default   [  59% ] 80 VUs  00m25.9s/10m0s  059481/100000 shared iters
+
+running (00m27.0s), 80/80 VUs, 61854 complete and 0 interrupted iterations
+default   [  62% ] 80 VUs  00m26.9s/10m0s  061854/100000 shared iters
+
+running (00m28.0s), 80/80 VUs, 64168 complete and 0 interrupted iterations
+default   [  64% ] 80 VUs  00m27.9s/10m0s  064168/100000 shared iters
+
+running (00m29.0s), 80/80 VUs, 66287 complete and 0 interrupted iterations
+default   [  66% ] 80 VUs  00m28.9s/10m0s  066287/100000 shared iters
+
+running (00m30.0s), 80/80 VUs, 68630 complete and 0 interrupted iterations
+default   [  69% ] 80 VUs  00m29.9s/10m0s  068630/100000 shared iters
+
+running (00m31.0s), 80/80 VUs, 71022 complete and 0 interrupted iterations
+default   [  71% ] 80 VUs  00m30.9s/10m0s  071022/100000 shared iters
+
+running (00m32.0s), 80/80 VUs, 73421 complete and 0 interrupted iterations
+default   [  73% ] 80 VUs  00m31.9s/10m0s  073421/100000 shared iters
+
+running (00m33.0s), 80/80 VUs, 75704 complete and 0 interrupted iterations
+default   [  76% ] 80 VUs  00m32.9s/10m0s  075704/100000 shared iters
+
+running (00m34.0s), 80/80 VUs, 78152 complete and 0 interrupted iterations
+default   [  78% ] 80 VUs  00m33.9s/10m0s  078152/100000 shared iters
+
+running (00m35.0s), 80/80 VUs, 80543 complete and 0 interrupted iterations
+default   [  81% ] 80 VUs  00m34.9s/10m0s  080543/100000 shared iters
+
+running (00m36.0s), 80/80 VUs, 82910 complete and 0 interrupted iterations
+default   [  83% ] 80 VUs  00m35.9s/10m0s  082910/100000 shared iters
+
+running (00m37.0s), 80/80 VUs, 85336 complete and 0 interrupted iterations
+default   [  85% ] 80 VUs  00m36.9s/10m0s  085336/100000 shared iters
+
+running (00m38.0s), 80/80 VUs, 87622 complete and 0 interrupted iterations
+default   [  88% ] 80 VUs  00m37.9s/10m0s  087622/100000 shared iters
+
+running (00m39.0s), 80/80 VUs, 89946 complete and 0 interrupted iterations
+default   [  90% ] 80 VUs  00m38.9s/10m0s  089946/100000 shared iters
+
+running (00m40.0s), 80/80 VUs, 92230 complete and 0 interrupted iterations
+default   [  92% ] 80 VUs  00m39.9s/10m0s  092230/100000 shared iters
+
+running (00m41.0s), 80/80 VUs, 94091 complete and 0 interrupted iterations
+default   [  94% ] 80 VUs  00m40.9s/10m0s  094091/100000 shared iters
+
+running (00m42.0s), 80/80 VUs, 96468 complete and 0 interrupted iterations
+default   [  96% ] 80 VUs  00m41.9s/10m0s  096468/100000 shared iters
+
+running (00m43.0s), 80/80 VUs, 98822 complete and 0 interrupted iterations
+default   [  99% ] 80 VUs  00m42.9s/10m0s  098822/100000 shared iters
+time="2025-06-05T18:26:09Z" level=info msg="INFO: Query test finished. Tested with 100 keys." source=console
+time="2025-06-05T18:26:09Z" level=info msg="INFO: Teardown cleanup finished." source=console
+
+
+  █ THRESHOLDS 
+
+    checks{endpoint:postgres_get}
+    ✓ 'rate>0.99' rate=100.00%
+
+    http_req_duration{endpoint:postgres_get}
+    ✓ 'p(95)<300' p(95)=82.33ms
+
+    http_req_failed{endpoint:postgres_get}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 300000  6889.487826/s
+    checks_succeeded...................: 100.00% 300000 out of 300000
+    checks_failed......................: 0.00%   0 out of 300000
+
+    ✓ Postgres: get status is 200
+    ✓ Postgres: get response has valid status
+    ✓ Postgres: get response is valid JSON
+
+    HTTP
+    http_req_duration.......................................................: avg=34.25ms min=601.67µs med=27.3ms  max=381.56ms p(90)=62.21ms p(95)=82.31ms
+      { endpoint:postgres_get }.............................................: avg=34.28ms min=702.87µs med=27.31ms max=381.56ms p(90)=62.24ms p(95)=82.33ms
+      { expected_response:true }............................................: avg=34.25ms min=601.67µs med=27.3ms  max=381.56ms p(90)=62.21ms p(95)=82.31ms
+    http_req_failed.........................................................: 0.00%  0 out of 100101
+      { endpoint:postgres_get }.............................................: 0.00%  0 out of 100000
+    http_reqs...............................................................: 100101 2298.815403/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=34.67ms min=838.76µs med=27.67ms max=381.71ms p(90)=62.88ms p(95)=82.78ms
+    iterations..............................................................: 100000 2296.495942/s
+    vus.....................................................................: 80     min=80          max=80
+    vus_max.................................................................: 80     min=80          max=80
+
+    NETWORK
+    data_received...........................................................: 21 MB  489 kB/s
+    data_sent...............................................................: 13 MB  294 kB/s
+
+
+
+
+running (00m43.5s), 00/80 VUs, 100000 complete and 0 interrupted iterations
+default ✓ [ 100% ] 80 VUs  00m43.4s/10m0s  100000/100000 shared iters
+[SUCCESS] K6 AOT Query test completed
+
+=====================================================================
+K6 NAOT INSERT TEST
+=====================================================================
+
+[2025-06-05 18:26:10] Running K6 NAOT Insert test...
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./k6/naot/insert-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 80 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 100000 iterations shared among 80 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+
+running (00m01.0s), 80/80 VUs, 0 complete and 0 interrupted iterations
+default   [   0% ] 80 VUs  00m01.0s/10m0s  000000/100000 shared iters
+
+running (00m02.0s), 80/80 VUs, 1058 complete and 0 interrupted iterations
+default   [   1% ] 80 VUs  00m02.0s/10m0s  001058/100000 shared iters
+
+running (00m03.0s), 80/80 VUs, 2635 complete and 0 interrupted iterations
+default   [   3% ] 80 VUs  00m03.0s/10m0s  002635/100000 shared iters
+
+running (00m04.0s), 80/80 VUs, 4141 complete and 0 interrupted iterations
+default   [   4% ] 80 VUs  00m04.0s/10m0s  004141/100000 shared iters
+
+running (00m05.0s), 80/80 VUs, 5560 complete and 0 interrupted iterations
+default   [   6% ] 80 VUs  00m05.0s/10m0s  005560/100000 shared iters
+
+running (00m06.0s), 80/80 VUs, 6956 complete and 0 interrupted iterations
+default   [   7% ] 80 VUs  00m06.0s/10m0s  006956/100000 shared iters
+
+running (00m07.0s), 80/80 VUs, 8556 complete and 0 interrupted iterations
+default   [   9% ] 80 VUs  00m07.0s/10m0s  008556/100000 shared iters
+
+running (00m08.0s), 80/80 VUs, 10247 complete and 0 interrupted iterations
+default   [  10% ] 80 VUs  00m08.0s/10m0s  010247/100000 shared iters
+
+running (00m09.0s), 80/80 VUs, 11834 complete and 0 interrupted iterations
+default   [  12% ] 80 VUs  00m09.0s/10m0s  011834/100000 shared iters
+
+running (00m10.0s), 80/80 VUs, 13443 complete and 0 interrupted iterations
+default   [  13% ] 80 VUs  00m10.0s/10m0s  013443/100000 shared iters
+
+running (00m11.0s), 80/80 VUs, 14903 complete and 0 interrupted iterations
+default   [  15% ] 80 VUs  00m11.0s/10m0s  014903/100000 shared iters
+
+running (00m12.0s), 80/80 VUs, 16526 complete and 0 interrupted iterations
+default   [  17% ] 80 VUs  00m12.0s/10m0s  016555/100000 shared iters
+
+running (00m13.0s), 80/80 VUs, 18267 complete and 0 interrupted iterations
+default   [  18% ] 80 VUs  00m13.0s/10m0s  018267/100000 shared iters
+
+running (00m14.0s), 80/80 VUs, 20017 complete and 0 interrupted iterations
+default   [  20% ] 80 VUs  00m14.0s/10m0s  020017/100000 shared iters
+
+running (00m15.0s), 80/80 VUs, 21902 complete and 0 interrupted iterations
+default   [  22% ] 80 VUs  00m15.0s/10m0s  021902/100000 shared iters
+
+running (00m16.0s), 80/80 VUs, 23420 complete and 0 interrupted iterations
+default   [  23% ] 80 VUs  00m16.0s/10m0s  023420/100000 shared iters
+
+running (00m17.0s), 80/80 VUs, 25312 complete and 0 interrupted iterations
+default   [  25% ] 80 VUs  00m17.0s/10m0s  025312/100000 shared iters
+
+running (00m18.0s), 80/80 VUs, 27456 complete and 0 interrupted iterations
+default   [  27% ] 80 VUs  00m18.0s/10m0s  027456/100000 shared iters
+
+running (00m19.0s), 80/80 VUs, 29530 complete and 0 interrupted iterations
+default   [  30% ] 80 VUs  00m19.0s/10m0s  029530/100000 shared iters
+
+running (00m20.0s), 80/80 VUs, 31697 complete and 0 interrupted iterations
+default   [  32% ] 80 VUs  00m20.0s/10m0s  031697/100000 shared iters
+
+running (00m21.0s), 80/80 VUs, 33764 complete and 0 interrupted iterations
+default   [  34% ] 80 VUs  00m21.0s/10m0s  033764/100000 shared iters
+
+running (00m22.0s), 80/80 VUs, 35670 complete and 0 interrupted iterations
+default   [  36% ] 80 VUs  00m22.0s/10m0s  035670/100000 shared iters
+
+running (00m23.0s), 80/80 VUs, 37767 complete and 0 interrupted iterations
+default   [  38% ] 80 VUs  00m23.0s/10m0s  037767/100000 shared iters
+
+running (00m24.0s), 80/80 VUs, 39930 complete and 0 interrupted iterations
+default   [  40% ] 80 VUs  00m24.0s/10m0s  039930/100000 shared iters
+
+running (00m25.0s), 80/80 VUs, 41934 complete and 0 interrupted iterations
+default   [  42% ] 80 VUs  00m25.0s/10m0s  041934/100000 shared iters
+
+running (00m26.0s), 80/80 VUs, 44075 complete and 0 interrupted iterations
+default   [  44% ] 80 VUs  00m26.0s/10m0s  044075/100000 shared iters
+
+running (00m27.0s), 80/80 VUs, 46042 complete and 0 interrupted iterations
+default   [  46% ] 80 VUs  00m27.0s/10m0s  046042/100000 shared iters
+
+running (00m28.0s), 80/80 VUs, 48172 complete and 0 interrupted iterations
+default   [  48% ] 80 VUs  00m28.0s/10m0s  048172/100000 shared iters
+
+running (00m29.0s), 80/80 VUs, 50300 complete and 0 interrupted iterations
+default   [  50% ] 80 VUs  00m29.0s/10m0s  050300/100000 shared iters
+
+running (00m30.0s), 80/80 VUs, 52435 complete and 0 interrupted iterations
+default   [  52% ] 80 VUs  00m30.0s/10m0s  052435/100000 shared iters
+
+running (00m31.0s), 80/80 VUs, 54584 complete and 0 interrupted iterations
+default   [  55% ] 80 VUs  00m31.0s/10m0s  054584/100000 shared iters
+
+running (00m32.0s), 80/80 VUs, 56535 complete and 0 interrupted iterations
+default   [  57% ] 80 VUs  00m32.0s/10m0s  056535/100000 shared iters
+
+running (00m33.0s), 80/80 VUs, 58635 complete and 0 interrupted iterations
+default   [  59% ] 80 VUs  00m33.0s/10m0s  058635/100000 shared iters
+
+running (00m34.0s), 80/80 VUs, 60817 complete and 0 interrupted iterations
+default   [  61% ] 80 VUs  00m34.0s/10m0s  060817/100000 shared iters
+
+running (00m35.0s), 80/80 VUs, 62909 complete and 0 interrupted iterations
+default   [  63% ] 80 VUs  00m35.0s/10m0s  062909/100000 shared iters
+
+running (00m36.0s), 80/80 VUs, 65059 complete and 0 interrupted iterations
+default   [  65% ] 80 VUs  00m36.0s/10m0s  065059/100000 shared iters
+
+running (00m37.0s), 80/80 VUs, 67212 complete and 0 interrupted iterations
+default   [  67% ] 80 VUs  00m37.0s/10m0s  067212/100000 shared iters
+
+running (00m38.0s), 80/80 VUs, 69218 complete and 0 interrupted iterations
+default   [  69% ] 80 VUs  00m38.0s/10m0s  069218/100000 shared iters
+
+running (00m39.0s), 80/80 VUs, 71279 complete and 0 interrupted iterations
+default   [  71% ] 80 VUs  00m39.0s/10m0s  071279/100000 shared iters
+
+running (00m40.0s), 80/80 VUs, 73414 complete and 0 interrupted iterations
+default   [  73% ] 80 VUs  00m40.0s/10m0s  073414/100000 shared iters
+
+running (00m41.0s), 80/80 VUs, 75597 complete and 0 interrupted iterations
+default   [  76% ] 80 VUs  00m41.0s/10m0s  075597/100000 shared iters
+
+running (00m42.0s), 80/80 VUs, 77719 complete and 0 interrupted iterations
+default   [  78% ] 80 VUs  00m42.0s/10m0s  077719/100000 shared iters
+
+running (00m43.0s), 80/80 VUs, 79637 complete and 0 interrupted iterations
+default   [  80% ] 80 VUs  00m43.0s/10m0s  079637/100000 shared iters
+
+running (00m44.0s), 80/80 VUs, 81692 complete and 0 interrupted iterations
+default   [  82% ] 80 VUs  00m44.0s/10m0s  081692/100000 shared iters
+
+running (00m45.0s), 80/80 VUs, 83785 complete and 0 interrupted iterations
+default   [  84% ] 80 VUs  00m45.0s/10m0s  083785/100000 shared iters
+
+running (00m46.0s), 80/80 VUs, 85784 complete and 0 interrupted iterations
+default   [  86% ] 80 VUs  00m46.0s/10m0s  085784/100000 shared iters
+
+running (00m47.0s), 80/80 VUs, 87828 complete and 0 interrupted iterations
+default   [  88% ] 80 VUs  00m47.0s/10m0s  087828/100000 shared iters
+
+running (00m48.0s), 80/80 VUs, 89611 complete and 0 interrupted iterations
+default   [  90% ] 80 VUs  00m48.0s/10m0s  089611/100000 shared iters
+
+running (00m49.0s), 80/80 VUs, 91779 complete and 0 interrupted iterations
+default   [  92% ] 80 VUs  00m49.0s/10m0s  091779/100000 shared iters
+
+running (00m50.0s), 80/80 VUs, 93827 complete and 0 interrupted iterations
+default   [  94% ] 80 VUs  00m50.0s/10m0s  093827/100000 shared iters
+
+running (00m51.0s), 80/80 VUs, 95816 complete and 0 interrupted iterations
+default   [  96% ] 80 VUs  00m51.0s/10m0s  095816/100000 shared iters
+
+running (00m52.0s), 80/80 VUs, 97992 complete and 0 interrupted iterations
+default   [  98% ] 80 VUs  00m52.0s/10m0s  097992/100000 shared iters
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Insert test finished." source=console
+
+running (00m53.0s), 00/80 VUs, 100000 complete and 0 interrupted iterations
+default ✓ [ 100% ] 80 VUs  00m52.9s/10m0s  100000/100000 shared iters
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Teardown cleanup finished." source=console
+
+
+  █ THRESHOLDS 
+
+    checks{endpoint:postgres_insert}
+    ✓ 'rate>0.99' rate=100.00%
+
+    http_req_duration{endpoint:postgres_insert}
+    ✓ 'p(95)<300' p(95)=120.57ms
+
+    http_req_failed{endpoint:postgres_insert}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 100000  1887.212605/s
+    checks_succeeded...................: 100.00% 100000 out of 100000
+    checks_failed......................: 0.00%   0 out of 100000
+
+    ✓ Postgres: insert status is 200
+
+    HTTP
+    http_req_duration...........................................................: avg=42ms    min=517.51µs med=28.64ms max=1.74s p(90)=86.51ms p(95)=120.57ms
+      { endpoint:postgres_insert }..............................................: avg=42ms    min=517.51µs med=28.64ms max=1.74s p(90)=86.51ms p(95)=120.57ms
+      { expected_response:true }................................................: avg=42ms    min=517.51µs med=28.64ms max=1.74s p(90)=86.51ms p(95)=120.57ms
+    http_req_failed.............................................................: 0.00%  0 out of 100001
+      { endpoint:postgres_insert }..............................................: 0.00%  0 out of 100000
+    http_reqs...................................................................: 100001 1887.231477/s
+
+    EXECUTION
+    iteration_duration..........................................................: avg=42.27ms min=665.91µs med=28.94ms max=1.75s p(90)=86.73ms p(95)=120.8ms 
+    iterations..................................................................: 100000 1887.212605/s
+    vus.........................................................................: 0      min=0           max=80
+    vus_max.....................................................................: 80     min=80          max=80
+
+    NETWORK
+    data_received...............................................................: 9.2 MB 174 kB/s
+    data_sent...................................................................: 26 MB  491 kB/s
+
+
+
+
+running (00m53.0s), 00/80 VUs, 100000 complete and 0 interrupted iterations
+default ✓ [ 100% ] 80 VUs  00m52.9s/10m0s  100000/100000 shared iters
+[SUCCESS] K6 NAOT Insert test completed
+
+=====================================================================
+K6 NAOT QUERY TEST
+=====================================================================
+
+[2025-06-05 18:27:03] Running K6 NAOT Query test...
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: ./k6/naot/query-test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 80 max VUs, 10m30s max duration (incl. graceful stop):
+              * default: 100000 iterations shared among 80 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setting up 100 keys for query test..." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 10/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 20/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 30/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 40/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 50/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 60/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 70/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 80/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 90/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup progress... 100/100 keys inserted." source=console
+time="2025-06-05T18:27:03Z" level=info msg="INFO: Setup complete. 100 keys available for querying." source=console
+
+running (00m01.0s), 80/80 VUs, 1591 complete and 0 interrupted iterations
+default   [   2% ] 80 VUs  00m00.9s/10m0s  001591/100000 shared iters
+
+running (00m02.0s), 80/80 VUs, 3660 complete and 0 interrupted iterations
+default   [   4% ] 80 VUs  00m01.9s/10m0s  003660/100000 shared iters
+
+running (00m03.0s), 80/80 VUs, 5753 complete and 0 interrupted iterations
+default   [   6% ] 80 VUs  00m02.9s/10m0s  005753/100000 shared iters
+
+running (00m04.0s), 80/80 VUs, 7887 complete and 0 interrupted iterations
+default   [   8% ] 80 VUs  00m03.9s/10m0s  007887/100000 shared iters
+
+running (00m05.0s), 80/80 VUs, 10154 complete and 0 interrupted iterations
+default   [  10% ] 80 VUs  00m04.9s/10m0s  010154/100000 shared iters
+
+running (00m06.0s), 80/80 VUs, 12330 complete and 0 interrupted iterations
+default   [  12% ] 80 VUs  00m05.9s/10m0s  012330/100000 shared iters
+
+running (00m07.0s), 80/80 VUs, 14773 complete and 0 interrupted iterations
+default   [  15% ] 80 VUs  00m06.9s/10m0s  014773/100000 shared iters
+
+running (00m08.0s), 80/80 VUs, 16920 complete and 0 interrupted iterations
+default   [  17% ] 80 VUs  00m07.9s/10m0s  016920/100000 shared iters
+
+running (00m09.0s), 80/80 VUs, 18791 complete and 0 interrupted iterations
+default   [  19% ] 80 VUs  00m08.9s/10m0s  018791/100000 shared iters
+
+running (00m10.0s), 80/80 VUs, 21025 complete and 0 interrupted iterations
+default   [  21% ] 80 VUs  00m09.9s/10m0s  021025/100000 shared iters
+
+running (00m11.0s), 80/80 VUs, 23158 complete and 0 interrupted iterations
+default   [  23% ] 80 VUs  00m10.9s/10m0s  023158/100000 shared iters
+
+running (00m12.0s), 80/80 VUs, 25400 complete and 0 interrupted iterations
+default   [  25% ] 80 VUs  00m11.9s/10m0s  025400/100000 shared iters
+
+running (00m13.0s), 80/80 VUs, 27589 complete and 0 interrupted iterations
+default   [  28% ] 80 VUs  00m12.9s/10m0s  027589/100000 shared iters
+
+running (00m14.0s), 80/80 VUs, 29933 complete and 0 interrupted iterations
+default   [  30% ] 80 VUs  00m13.9s/10m0s  029933/100000 shared iters
+
+running (00m15.0s), 80/80 VUs, 32285 complete and 0 interrupted iterations
+default   [  32% ] 80 VUs  00m14.9s/10m0s  032285/100000 shared iters
+
+running (00m16.0s), 80/80 VUs, 34441 complete and 0 interrupted iterations
+default   [  34% ] 80 VUs  00m15.9s/10m0s  034441/100000 shared iters
+
+running (00m17.0s), 80/80 VUs, 36757 complete and 0 interrupted iterations
+default   [  37% ] 80 VUs  00m16.9s/10m0s  036757/100000 shared iters
+
+running (00m18.0s), 80/80 VUs, 39162 complete and 0 interrupted iterations
+default   [  39% ] 80 VUs  00m17.9s/10m0s  039162/100000 shared iters
+
+running (00m19.0s), 80/80 VUs, 41504 complete and 0 interrupted iterations
+default   [  42% ] 80 VUs  00m18.9s/10m0s  041504/100000 shared iters
+
+running (00m20.0s), 80/80 VUs, 43911 complete and 0 interrupted iterations
+default   [  44% ] 80 VUs  00m19.9s/10m0s  043911/100000 shared iters
+
+running (00m21.0s), 80/80 VUs, 46340 complete and 0 interrupted iterations
+default   [  46% ] 80 VUs  00m20.9s/10m0s  046340/100000 shared iters
+
+running (00m22.0s), 80/80 VUs, 48523 complete and 0 interrupted iterations
+default   [  49% ] 80 VUs  00m21.9s/10m0s  048523/100000 shared iters
+
+running (00m23.0s), 80/80 VUs, 50966 complete and 0 interrupted iterations
+default   [  51% ] 80 VUs  00m22.9s/10m0s  050966/100000 shared iters
+
+running (00m24.0s), 80/80 VUs, 53362 complete and 0 interrupted iterations
+default   [  53% ] 80 VUs  00m23.9s/10m0s  053362/100000 shared iters
+
+running (00m25.0s), 80/80 VUs, 55844 complete and 0 interrupted iterations
+default   [  56% ] 80 VUs  00m24.9s/10m0s  055844/100000 shared iters
+
+running (00m26.0s), 80/80 VUs, 58228 complete and 0 interrupted iterations
+default   [  58% ] 80 VUs  00m25.9s/10m0s  058228/100000 shared iters
+
+running (00m27.0s), 80/80 VUs, 60342 complete and 0 interrupted iterations
+default   [  60% ] 80 VUs  00m26.9s/10m0s  060342/100000 shared iters
+
+running (00m28.0s), 80/80 VUs, 62697 complete and 0 interrupted iterations
+default   [  63% ] 80 VUs  00m27.9s/10m0s  062697/100000 shared iters
+
+running (00m29.0s), 80/80 VUs, 65145 complete and 0 interrupted iterations
+default   [  65% ] 80 VUs  00m28.9s/10m0s  065145/100000 shared iters
+
+running (00m30.0s), 80/80 VUs, 67579 complete and 0 interrupted iterations
+default   [  68% ] 80 VUs  00m29.9s/10m0s  067579/100000 shared iters
+
+running (00m31.0s), 80/80 VUs, 69917 complete and 0 interrupted iterations
+default   [  70% ] 80 VUs  00m30.9s/10m0s  069917/100000 shared iters
+
+running (00m32.0s), 80/80 VUs, 72344 complete and 0 interrupted iterations
+default   [  72% ] 80 VUs  00m31.9s/10m0s  072344/100000 shared iters
+
+running (00m33.0s), 80/80 VUs, 74675 complete and 0 interrupted iterations
+default   [  75% ] 80 VUs  00m32.9s/10m0s  074675/100000 shared iters
+
+running (00m34.0s), 80/80 VUs, 77057 complete and 0 interrupted iterations
+default   [  77% ] 80 VUs  00m33.9s/10m0s  077057/100000 shared iters
+
+running (00m35.0s), 80/80 VUs, 79582 complete and 0 interrupted iterations
+default   [  80% ] 80 VUs  00m34.9s/10m0s  079582/100000 shared iters
+
+running (00m36.0s), 80/80 VUs, 82043 complete and 0 interrupted iterations
+default   [  82% ] 80 VUs  00m35.9s/10m0s  082043/100000 shared iters
+
+running (00m37.0s), 80/80 VUs, 84370 complete and 0 interrupted iterations
+default   [  84% ] 80 VUs  00m36.9s/10m0s  084370/100000 shared iters
+
+running (00m38.0s), 80/80 VUs, 86491 complete and 0 interrupted iterations
+default   [  86% ] 80 VUs  00m37.9s/10m0s  086491/100000 shared iters
+
+running (00m39.0s), 80/80 VUs, 88877 complete and 0 interrupted iterations
+default   [  89% ] 80 VUs  00m38.9s/10m0s  088877/100000 shared iters
+
+running (00m40.0s), 80/80 VUs, 91211 complete and 0 interrupted iterations
+default   [  91% ] 80 VUs  00m39.9s/10m0s  091211/100000 shared iters
+
+running (00m41.0s), 80/80 VUs, 93666 complete and 0 interrupted iterations
+default   [  94% ] 80 VUs  00m40.9s/10m0s  093666/100000 shared iters
+
+running (00m42.0s), 80/80 VUs, 96166 complete and 0 interrupted iterations
+default   [  96% ] 80 VUs  00m41.9s/10m0s  096166/100000 shared iters
+
+running (00m43.0s), 80/80 VUs, 98372 complete and 0 interrupted iterations
+default   [  98% ] 80 VUs  00m42.9s/10m0s  098372/100000 shared iters
+time="2025-06-05T18:27:47Z" level=info msg="INFO: Query test finished. Tested with 100 keys." source=console
+time="2025-06-05T18:27:47Z" level=info msg="INFO: Teardown cleanup finished." source=console
+
+
+  █ THRESHOLDS 
+
+    checks{endpoint:postgres_get}
+    ✓ 'rate>0.99' rate=100.00%
+
+    http_req_duration{endpoint:postgres_get}
+    ✓ 'p(95)<300' p(95)=82.84ms
+
+    http_req_failed{endpoint:postgres_get}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 300000  6870.509283/s
+    checks_succeeded...................: 100.00% 300000 out of 300000
+    checks_failed......................: 0.00%   0 out of 300000
+
+    ✓ Postgres: get status is 200
+    ✓ Postgres: get response has valid status
+    ✓ Postgres: get response is valid JSON
+
+    HTTP
+    http_req_duration.......................................................: avg=34.36ms min=571.45µs med=27.58ms max=411.71ms p(90)=63.99ms p(95)=82.81ms
+      { endpoint:postgres_get }.............................................: avg=34.39ms min=571.45µs med=27.6ms  max=411.71ms p(90)=64.02ms p(95)=82.84ms
+      { expected_response:true }............................................: avg=34.36ms min=571.45µs med=27.58ms max=411.71ms p(90)=63.99ms p(95)=82.81ms
+    http_req_failed.........................................................: 0.00%  0 out of 100101
+      { endpoint:postgres_get }.............................................: 0.00%  0 out of 100000
+    http_reqs...............................................................: 100101 2292.482832/s
+
+    EXECUTION
+    iteration_duration......................................................: avg=34.79ms min=716.18µs med=27.99ms max=411.84ms p(90)=64.54ms p(95)=83.32ms
+    iterations..............................................................: 100000 2290.169761/s
+    vus.....................................................................: 80     min=80          max=80
+    vus_max.................................................................: 80     min=80          max=80
+
+    NETWORK
+    data_received...........................................................: 21 MB  488 kB/s
+    data_sent...............................................................: 13 MB  293 kB/s
+
+
+
+
+running (00m43.7s), 00/80 VUs, 100000 complete and 0 interrupted iterations
+default ✓ [ 100% ] 80 VUs  00m43.6s/10m0s  100000/100000 shared iters
+[SUCCESS] K6 NAOT Query test completed
+[SUCCESS] All available K6 benchmarks completed
+[2025-06-05 18:27:47] Cleaning up PostgreSQL test data...
+
+=====================================================================
+POSTGRESQL CLEANUP
+=====================================================================
+
+sysbench 1.1.0-3ceba0b (using bundled LuaJIT 2.1.0-beta3)
+
+Dropping table 'sbtest1'...
+Dropping table 'sbtest2'...
+Dropping table 'sbtest3'...
+Dropping table 'sbtest4'...
+Dropping table 'sbtest5'...
+Dropping table 'sbtest6'...
+Dropping table 'sbtest7'...
+Dropping table 'sbtest8'...
+Dropping table 'sbtest9'...
+Dropping table 'sbtest10'...
+[SUCCESS] PostgreSQL cleanup completed
+
+=====================================================================
+BENCHMARK COMPLETION
+=====================================================================
+End Time: Thu Jun  5 18:27:47 UTC 2025
+Duration: 16 minutes and 33 seconds
+Results saved to: sysbench_results_r5a.large_20250605_181114.txt
+=====================================================================
+[2025-06-05 18:27:47] ================================================
+[SUCCESS] All benchmarks completed successfully!
+[2025-06-05 18:27:47] Detailed results saved to: sysbench_results_r5a.large_20250605_181114.txt
